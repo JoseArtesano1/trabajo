@@ -69,7 +69,7 @@ namespace pruebas.Vista
                 case 3:
                     var tabla = moduloInicio.CargaGridyCombo("select t.Nombre, e.horas as Horas, (e.horas*t.Valor) as Total from pyme.trabajadors t, pyme.extras e where t.IdTrabajador= e.IdTrabajador;");
                     datagridalerta.DataSource = tabla;
-                    var sumaTotal = tabla.Compute("SUM(Total)", "");
+                    var sumaTotal = tabla.Compute("SUM(Total)", ""); //funcion con nombre de la columna y un filtro
                     lblTotal.Text = sumaTotal.ToString(); GestionControles(false, false, true);
                     break;
             }
@@ -98,12 +98,22 @@ namespace pruebas.Vista
                   mcalendarioAlerta.AddBoldedDate(fecha.AddDays(365)); //ojo puede variar
                   mcalendarioAlerta.UpdateBoldedDates();
                 }
-                else if(moduloFechas.CalculosFechas(item.FechaDni, 0) < 60)
+               if(moduloFechas.CalculosFechas(item.FechaDni, 0) < 60)
                 {
                     DateTime fecha1 = moduloFechas.ObtenerFechaDate(item.FechaDni);
                     mcalendarioAlerta.AddBoldedDate(fecha1);
                     mcalendarioAlerta.UpdateBoldedDates();
                 }
+                if (item.FechaPermiso != "")
+                {
+                    if (moduloFechas.CalculosFechas(item.FechaPermiso, 0) < 60)
+                    {
+                        DateTime fecha2 = moduloFechas.ObtenerFechaDate(item.FechaPermiso);
+                        mcalendarioAlerta.AddBoldedDate(fecha2);
+                        mcalendarioAlerta.UpdateBoldedDates();
+                    }
+                }
+
             }
         }
        
@@ -115,11 +125,12 @@ namespace pruebas.Vista
             moduloFechas.milistadotrabajador.Clear();
             lblinforma.Text = "";
             lblinforma2.Text="";
+            lblInforma3.Text = "";
         }
 
         private void mcalendarioAlerta_DateSelected(object sender, DateRangeEventArgs e)
         {
-            lblinforma.Text = ""; lblinforma2.Text = "";
+            lblinforma.Text = ""; lblinforma2.Text = ""; lblInforma3.Text = "";
             DateTime fecha = mcalendarioAlerta.SelectionStart.Date;  // obtenemos la fecha del calendario
             foreach (var item in moduloFechas.milistadotrabajador)
             {
@@ -131,6 +142,14 @@ namespace pruebas.Vista
                 if (DateTime.Compare(DateTime.Parse(item.FechaDni), fecha) == 0)
                 {
                     lblinforma2.Text += " , " + item.Nombre;
+                }
+
+                if (item.FechaPermiso != "")
+                {
+                    if (DateTime.Compare(DateTime.Parse(item.FechaPermiso), fecha) == 0)
+                    {
+                        lblInforma3.Text += " , " + item.Nombre;
+                    }
                 }
             }
            

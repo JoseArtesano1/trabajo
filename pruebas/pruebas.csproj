@@ -12,6 +12,7 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
     <PublishUrl>D:\GTrabajadores\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -22,9 +23,8 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationRevision>1</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
     <BootstrapperEnabled>true</BootstrapperEnabled>
@@ -112,9 +112,9 @@
     <Compile Include="Controlador\ModuloInicio.cs" />
     <Compile Include="Controlador\ModuloTexto.cs" />
     <Compile Include="Controlador\MyDbContext.cs" />
-    <Compile Include="Migrations\202102091912211_Inicial.cs" />
-    <Compile Include="Migrations\202102091912211_Inicial.Designer.cs">
-      <DependentUpon>202102091912211_Inicial.cs</DependentUpon>
+    <Compile Include="Migrations\202105261842314_primera.cs" />
+    <Compile Include="Migrations\202105261842314_primera.Designer.cs">
+      <DependentUpon>202105261842314_primera.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Modelo\Agenda.cs" />
@@ -191,8 +191,8 @@
     <Compile Include="Modelo\Usuario.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Migrations\202102091912211_Inicial.resx">
-      <DependentUpon>202102091912211_Inicial.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202105261842314_primera.resx">
+      <DependentUpon>202105261842314_primera.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

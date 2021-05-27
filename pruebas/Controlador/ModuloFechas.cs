@@ -157,6 +157,7 @@ namespace pruebas.Controlador
             dt.Columns.Add("Dni/Nie");
             dt.Columns.Add("Rec_Medico");
             dt.Columns.Add("Fin_Dni/nie");
+            dt.Columns.Add("Fin_Permiso");
 
             DataRow row = dt.NewRow();
 
@@ -164,10 +165,11 @@ namespace pruebas.Controlador
 
             foreach(var item in lista)
             {
-                if(CalculosFechas(item.FechaMedico,365)<60 || CalculosFechas(item.FechaDni,0) < 60) //plazo de alerta
+                if(CalculosFechas(item.FechaMedico,365)<60 || CalculosFechas(item.FechaDni,0) < 60 
+                    || CalculosFechas(item.FechaPermiso, 0) < 60) //plazo de alerta
                 {
                     dt.Rows.Add(item.Nombre.ToString(), item.Dni.ToString(), item.FechaMedico.ToString(), 
-                        item.FechaDni.ToString());// llenamos datatable
+                        item.FechaDni.ToString(), item.FechaPermiso.ToString());// llenamos datatable
                     milistadotrabajador.Add(item);
                 }
                 else { MessageBox.Show("fuera de plazo"); }

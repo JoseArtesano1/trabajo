@@ -27,6 +27,7 @@ namespace pruebas.Modelo
         public bool Activo { get; set; }
 
         public int IdCategoria { get; set; }
+        public string FechaPermiso { get; set; }
 
         public Categoria Categoria { get; set; }
 

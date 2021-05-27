@@ -1,4 +1,4 @@
-namespace pruebas.Migrations
+namespace GestionTrabajadores.Migrations
 {
     using System;
     using System.Data.Entity;

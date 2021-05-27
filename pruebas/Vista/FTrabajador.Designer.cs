@@ -74,6 +74,9 @@
             this.txtnombre = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.lblPC = new System.Windows.Forms.Label();
+            this.checkBoxCoche = new System.Windows.Forms.CheckBox();
+            this.datePickpermiso = new System.Windows.Forms.DateTimePicker();
             this.panel2.SuspendLayout();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.datagridtrabaj)).BeginInit();
@@ -108,7 +111,7 @@
             this.panel2.BackColor = System.Drawing.Color.SteelBlue;
             this.panel2.Controls.Add(this.btnCerrar);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel2.Location = new System.Drawing.Point(0, 639);
+            this.panel2.Location = new System.Drawing.Point(0, 716);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1650, 50);
             this.panel2.TabIndex = 2;
@@ -119,7 +122,7 @@
             this.panel3.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel3.Location = new System.Drawing.Point(0, 22);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(17, 617);
+            this.panel3.Size = new System.Drawing.Size(17, 694);
             this.panel3.TabIndex = 4;
             // 
             // panel4
@@ -128,7 +131,7 @@
             this.panel4.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel4.Location = new System.Drawing.Point(1628, 22);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(22, 617);
+            this.panel4.Size = new System.Drawing.Size(22, 694);
             this.panel4.TabIndex = 5;
             // 
             // panel5
@@ -142,7 +145,7 @@
             this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel5.Location = new System.Drawing.Point(17, 22);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(1611, 617);
+            this.panel5.Size = new System.Drawing.Size(1611, 694);
             this.panel5.TabIndex = 6;
             // 
             // label12
@@ -159,7 +162,7 @@
             // btnModificar
             // 
             this.btnModificar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnModificar.Location = new System.Drawing.Point(238, 562);
+            this.btnModificar.Location = new System.Drawing.Point(238, 639);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(113, 37);
             this.btnModificar.TabIndex = 12;
@@ -170,7 +173,7 @@
             // btnEliminar
             // 
             this.btnEliminar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnEliminar.Location = new System.Drawing.Point(29, 563);
+            this.btnEliminar.Location = new System.Drawing.Point(29, 640);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(101, 37);
             this.btnEliminar.TabIndex = 11;
@@ -219,7 +222,7 @@
             this.datagridtrabaj.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.datagridtrabaj.RowTemplate.Height = 28;
             this.datagridtrabaj.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.datagridtrabaj.Size = new System.Drawing.Size(377, 474);
+            this.datagridtrabaj.Size = new System.Drawing.Size(377, 551);
             this.datagridtrabaj.TabIndex = 10;
             this.datagridtrabaj.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.datagridtrabaj_CellClick);
             // 
@@ -234,7 +237,7 @@
             this.groupBox1.ForeColor = System.Drawing.Color.White;
             this.groupBox1.Location = new System.Drawing.Point(399, 6);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1209, 605);
+            this.groupBox1.Size = new System.Drawing.Size(1209, 682);
             this.groupBox1.TabIndex = 9;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "DATOS TRABAJADOR";
@@ -248,7 +251,7 @@
             this.panel7.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel7.Location = new System.Drawing.Point(612, 26);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(594, 576);
+            this.panel7.Size = new System.Drawing.Size(594, 653);
             this.panel7.TabIndex = 1;
             // 
             // label13
@@ -266,7 +269,7 @@
             this.label11.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.label11.AutoSize = true;
             this.label11.ForeColor = System.Drawing.Color.White;
-            this.label11.Location = new System.Drawing.Point(148, 356);
+            this.label11.Location = new System.Drawing.Point(148, 433);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(189, 25);
             this.label11.TabIndex = 61;
@@ -276,7 +279,7 @@
             // 
             this.cmbAsignado.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.cmbAsignado.FormattingEnabled = true;
-            this.cmbAsignado.Location = new System.Drawing.Point(343, 348);
+            this.cmbAsignado.Location = new System.Drawing.Point(343, 425);
             this.cmbAsignado.Name = "cmbAsignado";
             this.cmbAsignado.Size = new System.Drawing.Size(208, 33);
             this.cmbAsignado.TabIndex = 60;
@@ -324,11 +327,14 @@
             this.datagridAsignados.RowsDefaultCellStyle = dataGridViewCellStyle6;
             this.datagridAsignados.RowTemplate.Height = 28;
             this.datagridAsignados.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.datagridAsignados.Size = new System.Drawing.Size(578, 203);
+            this.datagridAsignados.Size = new System.Drawing.Size(578, 280);
             this.datagridAsignados.TabIndex = 53;
             // 
             // panel6
             // 
+            this.panel6.Controls.Add(this.lblPC);
+            this.panel6.Controls.Add(this.checkBoxCoche);
+            this.panel6.Controls.Add(this.datePickpermiso);
             this.panel6.Controls.Add(this.checboxActivo);
             this.panel6.Controls.Add(this.btnAlta);
             this.panel6.Controls.Add(this.datepickAlta);
@@ -355,7 +361,7 @@
             this.panel6.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel6.Location = new System.Drawing.Point(3, 26);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(609, 576);
+            this.panel6.Size = new System.Drawing.Size(609, 653);
             this.panel6.TabIndex = 0;
             // 
             // checboxActivo
@@ -375,7 +381,7 @@
             // 
             this.btnAlta.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnAlta.ForeColor = System.Drawing.Color.Black;
-            this.btnAlta.Location = new System.Drawing.Point(159, 532);
+            this.btnAlta.Location = new System.Drawing.Point(159, 609);
             this.btnAlta.Name = "btnAlta";
             this.btnAlta.Size = new System.Drawing.Size(87, 36);
             this.btnAlta.TabIndex = 52;
@@ -402,7 +408,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.datepickDni.Location = new System.Drawing.Point(174, 168);
             this.datepickDni.Name = "datepickDni";
-            this.datepickDni.Size = new System.Drawing.Size(151, 30);
+            this.datepickDni.Size = new System.Drawing.Size(230, 30);
             this.datepickDni.TabIndex = 57;
             // 
             // label9
@@ -425,14 +431,14 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.datepickMedico.Location = new System.Drawing.Point(174, 481);
             this.datepickMedico.Name = "datepickMedico";
-            this.datepickMedico.Size = new System.Drawing.Size(151, 30);
+            this.datepickMedico.Size = new System.Drawing.Size(230, 30);
             this.datepickMedico.TabIndex = 58;
             // 
             // btnCancelar
             // 
             this.btnCancelar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.btnCancelar.ForeColor = System.Drawing.Color.Black;
-            this.btnCancelar.Location = new System.Drawing.Point(308, 532);
+            this.btnCancelar.Location = new System.Drawing.Point(308, 609);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(133, 36);
             this.btnCancelar.TabIndex = 51;
@@ -634,11 +640,45 @@
             this.label1.TabIndex = 51;
             this.label1.Text = "NOMBRE:";
             // 
+            // lblPC
+            // 
+            this.lblPC.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblPC.AutoSize = true;
+            this.lblPC.ForeColor = System.Drawing.Color.White;
+            this.lblPC.Location = new System.Drawing.Point(183, 537);
+            this.lblPC.Name = "lblPC";
+            this.lblPC.Size = new System.Drawing.Size(97, 25);
+            this.lblPC.TabIndex = 72;
+            this.lblPC.Text = "FIN P. C.:";
+            // 
+            // checkBoxCoche
+            // 
+            this.checkBoxCoche.AutoSize = true;
+            this.checkBoxCoche.Location = new System.Drawing.Point(24, 536);
+            this.checkBoxCoche.Name = "checkBoxCoche";
+            this.checkBoxCoche.Size = new System.Drawing.Size(140, 29);
+            this.checkBoxCoche.TabIndex = 71;
+            this.checkBoxCoche.Text = "VEHÍCULO";
+            this.checkBoxCoche.UseVisualStyleBackColor = true;
+            this.checkBoxCoche.CheckedChanged += new System.EventHandler(this.checkBoxCoche_CheckedChanged);
+            // 
+            // datePickpermiso
+            // 
+            this.datePickpermiso.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.datePickpermiso.Location = new System.Drawing.Point(299, 536);
+            this.datePickpermiso.Name = "datePickpermiso";
+            this.datePickpermiso.Size = new System.Drawing.Size(216, 30);
+            this.datePickpermiso.TabIndex = 70;
+            // 
             // FTrabajador
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1650, 689);
+            this.ClientSize = new System.Drawing.Size(1650, 766);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
@@ -702,5 +742,8 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.CheckBox checboxActivo;
+        private System.Windows.Forms.Label lblPC;
+        private System.Windows.Forms.CheckBox checkBoxCoche;
+        private System.Windows.Forms.DateTimePicker datePickpermiso;
     }
 }

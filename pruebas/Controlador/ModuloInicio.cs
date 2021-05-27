@@ -135,21 +135,25 @@ namespace pruebas.Controlador
             }
         }
 
-        public void LimpiarCombo(System.Windows.Forms.Control root)
+        public void LimpiarComboyCheck(System.Windows.Forms.Control root)
         {
             foreach (System.Windows.Forms.Control ctrl in root.Controls)
-            {  
-                if (ctrl is ComboBox )
-                {                    
+            {
+                if (ctrl is ComboBox)
+                {
                     ctrl.Text = String.Empty;
-                    
+                }
+                else if (ctrl is CheckBox)
+                {
+                    CheckBox checkbox = ctrl as CheckBox;
+                    checkbox.Checked = false;
                 }
                 else
-                {  if (ctrl.Controls.Count > 0) { LimpiarCombo(ctrl); }
-                  
+                {
+                    if (ctrl.Controls.Count > 0) { LimpiarComboyCheck(ctrl); }
                 }
             }
- 
+
         }
 
         public  void bloqueo(System.Windows.Forms.Control root, System.Windows.Forms.Control root1,
@@ -235,9 +239,9 @@ namespace pruebas.Controlador
         }
 
         public void ModificarTrabajador(string dni, string nombre, string direccion, string alta, string fdni,
-            string fmed, int mov, long ss, int val, int idcat, bool act, int idt)
+            string fmed, int mov, long ss, int val, int idcat, bool act, string fperm, int idt)
         {
-            string sql = @"UPDATE  pyme.trabajadors SET Dni=@dni, Nombre = @nombre, Direccion = @direc, Telefono = @tef, Nseguridads = @sso, FechaAlta = @alt, FechaMedico = @med, FechaDni = @fdn, Valor = @va, Activo = @ac, IdCategoria=@idc where IdTrabajador=@idt";
+            string sql = @"UPDATE  pyme.trabajadors SET Dni=@dni, Nombre = @nombre, Direccion = @direc, Telefono = @tef, Nseguridads = @sso, FechaAlta = @alt, FechaMedico = @med, FechaDni = @fdn, Valor = @va, Activo = @ac, IdCategoria=@idc,FechaPermiso =@fper where IdTrabajador=@idt";
           
             using (MySqlConnection con = new MySqlConnection(conexion))
             {
@@ -255,6 +259,7 @@ namespace pruebas.Controlador
                     comando.Parameters.AddWithValue("@va", val);
                     comando.Parameters.AddWithValue("@ac", act);
                     comando.Parameters.AddWithValue("@idc", idcat);
+                    comando.Parameters.AddWithValue("@fper", fperm);
                     comando.Parameters.AddWithValue("@idt", idt);
                      comando.ExecuteNonQuery();
                 }

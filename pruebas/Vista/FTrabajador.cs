@@ -73,6 +73,16 @@ namespace pruebas.Vista
                     datepickAlta.Value = DateTime.Parse(trabajador.FechaAlta);
                     datepickDni.Value = DateTime.Parse(trabajador.FechaDni);
                     datepickMedico.Value = DateTime.Parse(trabajador.FechaMedico);
+                    string fpermiso = moduloInicio.Obtenerdato("select FechaPermiso from empresa.trabajadors where IdTrabajador=" + idTrabajador + ";", 0);
+                    if (fpermiso != "")
+                    {   checkBoxCoche.Checked = true;
+                        datePickpermiso.Value = DateTime.Parse(trabajador.FechaPermiso);
+                    }
+                    else
+                    {   checkBoxCoche.Checked = false;
+                        datePickpermiso.Value = DateTime.Today;
+                    }
+
                     VaciarDatagridAsignar();
                     btnAlta.Enabled = false;
                 }
@@ -102,7 +112,14 @@ namespace pruebas.Vista
             DateTime fechaAlta = datepickAlta.Value;
             DateTime fechaDni = datepickDni.Value;
             DateTime fechaMed = datepickMedico.Value;
+            string fechaVehiculo;
 
+            if (checkBoxCoche.Checked)
+            {   DateTime fechaPermiso = datePickpermiso.Value;
+                fechaVehiculo = moduloFechas.ObtenerFecha(fechaPermiso);
+            }
+            else {fechaVehiculo = "";  }
+         
             if (!moduloInicio.Existe("select IdTrabajador from pyme.trabajadors where Dni='" + txtdni.Text + "'or Nseguridads="+txtseguridadS.Text + ";"))
             { 
                 if(DateTime.Compare(fechaAlta,fechaDni)<0 || DateTime.Compare(fechaAlta, fechaDni) == 0)
@@ -120,8 +137,8 @@ namespace pruebas.Vista
                             Valor = int.Parse(txtValor.Text), 
                             Activo = checboxActivo.Checked, 
                             IdCategoria = contexto.Categorias.Where(x => 
-                            x.Nombre ==cmbCategoria.SelectedValue.ToString()).FirstOrDefault().IdCategoria
-                         
+                            x.Nombre ==cmbCategoria.SelectedValue.ToString()).FirstOrDefault().IdCategoria,
+                            FechaPermiso = fechaVehiculo
                         };
                         contexto.Trabajadors.Add(trabajador);
                         contexto.SaveChanges();
@@ -194,12 +211,20 @@ namespace pruebas.Vista
                 DateTime fechaAlta = datepickAlta.Value;
                 DateTime fechaDni = datepickDni.Value;
                 DateTime fechaMed = datepickMedico.Value;
+                string fechaVehiculo;
+
+                if (checkBoxCoche.Checked)
+                {
+                    DateTime fechaPerm = datePickpermiso.Value;
+                    fechaVehiculo = moduloFechas.ObtenerFecha(fechaPerm);
+                }
+                else{fechaVehiculo = "";}
              
+
                 if (DateTime.Compare(fechaAlta, fechaDni) < 0 || DateTime.Compare(fechaAlta, fechaDni) == 0)
                 {
                     using (var contexto = new MyDbContext())
-                    {
-                        //string dni= moduloInicio.ControlDni(contexto, idTrabajador, txtdni.Text);
+                    {                       
                          string dni = moduloInicio.ControlarModificar("select Dni from " +
                             "pyme.trabajadors where Dni='" + txtdni.Text.ToUpper() + "';", "select Dni from" +
                             " pyme.trabajadors where IdTrabajador=" + idTrabajador+ ";", 0, txtdni.Text);
@@ -207,7 +232,7 @@ namespace pruebas.Vista
                          string nombre= txtnombre.Text.ToUpper();
                          string direccion= txtdireccion.Text.ToUpper();
                          int telefono= int.Parse(txtmovil.Text);
-                         //long ss= long.Parse(txtseguridadS.Text);
+                         
                          long ss= long.Parse  ( moduloInicio.ControlarModificar("select Nseguridads from " +
                             "pyme.trabajadors where Nseguridads=" + txtseguridadS.Text + ";", "select Nseguridads from" +
                             " pyme.trabajadors where IdTrabajador=" + idTrabajador + ";", 0, txtseguridadS.Text));
@@ -219,7 +244,7 @@ namespace pruebas.Vista
                          int idcat= contexto.Categorias.Where(x => x.Nombre == cmbCategoria.SelectedValue.ToString())
                             .FirstOrDefault().IdCategoria;
 
-                        moduloInicio.ModificarTrabajador(dni, nombre, direccion, alta, fdni, fmedico, telefono, ss, val, idcat, act, idTrabajador);
+                        moduloInicio.ModificarTrabajador(dni, nombre, direccion, alta, fdni, fmedico, telefono, ss, val, idcat, act, fechaVehiculo,idTrabajador);
 
                         datagridtrabaj.DataSource = moduloInicio.CargaGridyCombo("select IdTrabajador, Nombre,Telefono,Activo from pyme.trabajadors");
                         Trabajador trabajador = moduloInicio.TrabajadoresEmpresa().Where(x => x.IdTrabajador == idTrabajador).FirstOrDefault(); 
@@ -323,6 +348,19 @@ namespace pruebas.Vista
         {   moduloInicio.LimpiarTexto(this);
             checboxActivo.Checked = false;
             cmbCategoria.SelectedIndex = -1;
+        }
+
+        private void checkBoxCoche_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBoxCoche.Checked)
+            {   datePickpermiso.Visible = true;
+                lblPC.Visible = true;
+            }
+            else
+            {
+                datePickpermiso.Visible = false;
+                lblPC.Visible = false;
+            }
         }
     }
 }

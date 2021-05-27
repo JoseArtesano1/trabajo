@@ -136,12 +136,12 @@ namespace pruebas.Vista
                 panelformularios.Tag = formulario;
                 formulario.Show();
                 formulario.BringToFront();
-                //moduloInicio.LimpiarTexto(this); moduloInicio.LimpiarCombo(this); 
+               // moduloInicio.LimpiarTexto(this); moduloInicio.LimpiarComboyCheck(this); 
                 formulario.FormClosed += new FormClosedEventHandler(CerrarForm);
             }
             else
             {
-                //moduloInicio.LimpiarTexto(this); moduloInicio.LimpiarCombo(this);
+              //  moduloInicio.LimpiarTexto(this); moduloInicio.LimpiarComboyCheck(this);
                 formulario.BringToFront();
             }
            
