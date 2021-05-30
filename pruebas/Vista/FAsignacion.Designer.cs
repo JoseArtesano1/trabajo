@@ -42,6 +42,7 @@
             this.btneliminar = new System.Windows.Forms.Button();
             this.datagridAsignar = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnCancelar = new System.Windows.Forms.Button();
             this.lblmes = new System.Windows.Forms.Label();
             this.cmbmes = new System.Windows.Forms.ComboBox();
             this.lblfecha = new System.Windows.Forms.Label();
@@ -70,7 +71,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1080, 33);
+            this.panel1.Size = new System.Drawing.Size(1137, 33);
             this.panel1.TabIndex = 0;
             // 
             // panel2
@@ -79,16 +80,16 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel2.Location = new System.Drawing.Point(0, 33);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(25, 506);
+            this.panel2.Size = new System.Drawing.Size(25, 597);
             this.panel2.TabIndex = 1;
             // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.SteelBlue;
             this.panel3.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel3.Location = new System.Drawing.Point(1058, 33);
+            this.panel3.Location = new System.Drawing.Point(1115, 33);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(22, 506);
+            this.panel3.Size = new System.Drawing.Size(22, 597);
             this.panel3.TabIndex = 2;
             // 
             // panel4
@@ -96,15 +97,15 @@
             this.panel4.BackColor = System.Drawing.Color.SteelBlue;
             this.panel4.Controls.Add(this.btncerrar);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel4.Location = new System.Drawing.Point(25, 479);
+            this.panel4.Location = new System.Drawing.Point(25, 570);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1033, 60);
+            this.panel4.Size = new System.Drawing.Size(1090, 60);
             this.panel4.TabIndex = 3;
             // 
             // btncerrar
             // 
             this.btncerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btncerrar.Location = new System.Drawing.Point(894, 3);
+            this.btncerrar.Location = new System.Drawing.Point(951, 3);
             this.btncerrar.Name = "btncerrar";
             this.btncerrar.Size = new System.Drawing.Size(110, 42);
             this.btncerrar.TabIndex = 0;
@@ -125,7 +126,7 @@
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1033, 446);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1090, 537);
             this.tableLayoutPanel1.TabIndex = 4;
             // 
             // panel5
@@ -135,9 +136,9 @@
             this.panel5.Controls.Add(this.btneliminar);
             this.panel5.Controls.Add(this.datagridAsignar);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel5.Location = new System.Drawing.Point(556, 3);
+            this.panel5.Location = new System.Drawing.Point(587, 3);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(474, 440);
+            this.panel5.Size = new System.Drawing.Size(500, 531);
             this.panel5.TabIndex = 0;
             // 
             // label5
@@ -156,7 +157,7 @@
             // btneliminar
             // 
             this.btneliminar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btneliminar.Location = new System.Drawing.Point(322, 363);
+            this.btneliminar.Location = new System.Drawing.Point(348, 454);
             this.btneliminar.Name = "btneliminar";
             this.btneliminar.Size = new System.Drawing.Size(115, 34);
             this.btneliminar.TabIndex = 1;
@@ -205,13 +206,14 @@
             this.datagridAsignar.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.datagridAsignar.RowTemplate.Height = 28;
             this.datagridAsignar.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.datagridAsignar.Size = new System.Drawing.Size(376, 156);
+            this.datagridAsignar.Size = new System.Drawing.Size(402, 247);
             this.datagridAsignar.TabIndex = 0;
             this.datagridAsignar.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.datagridAsignar_CellClick);
             // 
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.groupBox1.Controls.Add(this.btnCancelar);
             this.groupBox1.Controls.Add(this.lblmes);
             this.groupBox1.Controls.Add(this.cmbmes);
             this.groupBox1.Controls.Add(this.lblfecha);
@@ -232,10 +234,23 @@
             this.groupBox1.ForeColor = System.Drawing.Color.White;
             this.groupBox1.Location = new System.Drawing.Point(3, 3);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(547, 440);
+            this.groupBox1.Size = new System.Drawing.Size(578, 531);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "ASIGNAR";
+            // 
+            // btnCancelar
+            // 
+            this.btnCancelar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelar.ForeColor = System.Drawing.Color.Black;
+            this.btnCancelar.Location = new System.Drawing.Point(428, 480);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(135, 37);
+            this.btnCancelar.TabIndex = 15;
+            this.btnCancelar.Text = "CANCELAR";
+            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // lblmes
             // 
@@ -259,7 +274,7 @@
             this.lblfecha.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblfecha.AutoSize = true;
-            this.lblfecha.Location = new System.Drawing.Point(9, 282);
+            this.lblfecha.Location = new System.Drawing.Point(9, 338);
             this.lblfecha.Name = "lblfecha";
             this.lblfecha.Size = new System.Drawing.Size(93, 26);
             this.lblfecha.TabIndex = 12;
@@ -267,7 +282,7 @@
             // 
             // datepickFecha
             // 
-            this.datepickFecha.Location = new System.Drawing.Point(181, 276);
+            this.datepickFecha.Location = new System.Drawing.Point(181, 332);
             this.datepickFecha.Name = "datepickFecha";
             this.datepickFecha.Size = new System.Drawing.Size(278, 32);
             this.datepickFecha.TabIndex = 11;
@@ -275,7 +290,7 @@
             // btnaltaCurso
             // 
             this.btnaltaCurso.ForeColor = System.Drawing.Color.Black;
-            this.btnaltaCurso.Location = new System.Drawing.Point(41, 347);
+            this.btnaltaCurso.Location = new System.Drawing.Point(41, 403);
             this.btnaltaCurso.Name = "btnaltaCurso";
             this.btnaltaCurso.Size = new System.Drawing.Size(79, 36);
             this.btnaltaCurso.TabIndex = 10;
@@ -286,7 +301,7 @@
             // btnaltaEpi
             // 
             this.btnaltaEpi.ForeColor = System.Drawing.Color.Black;
-            this.btnaltaEpi.Location = new System.Drawing.Point(206, 347);
+            this.btnaltaEpi.Location = new System.Drawing.Point(206, 403);
             this.btnaltaEpi.Name = "btnaltaEpi";
             this.btnaltaEpi.Size = new System.Drawing.Size(76, 36);
             this.btnaltaEpi.TabIndex = 9;
@@ -357,7 +372,7 @@
             this.cmbCarga.FormattingEnabled = true;
             this.cmbCarga.Location = new System.Drawing.Point(181, 166);
             this.cmbCarga.Name = "cmbCarga";
-            this.cmbCarga.Size = new System.Drawing.Size(298, 34);
+            this.cmbCarga.Size = new System.Drawing.Size(329, 34);
             this.cmbCarga.TabIndex = 3;
             // 
             // cmbasignacion
@@ -376,14 +391,14 @@
             this.cmbTrabajador.FormattingEnabled = true;
             this.cmbTrabajador.Location = new System.Drawing.Point(181, 48);
             this.cmbTrabajador.Name = "cmbTrabajador";
-            this.cmbTrabajador.Size = new System.Drawing.Size(319, 34);
+            this.cmbTrabajador.Size = new System.Drawing.Size(350, 34);
             this.cmbTrabajador.TabIndex = 1;
             this.cmbTrabajador.SelectedIndexChanged += new System.EventHandler(this.cmbTrabajador_SelectedIndexChanged);
             // 
             // btnaltaH
             // 
             this.btnaltaH.ForeColor = System.Drawing.Color.Black;
-            this.btnaltaH.Location = new System.Drawing.Point(350, 347);
+            this.btnaltaH.Location = new System.Drawing.Point(350, 403);
             this.btnaltaH.Name = "btnaltaH";
             this.btnaltaH.Size = new System.Drawing.Size(76, 36);
             this.btnaltaH.TabIndex = 0;
@@ -395,7 +410,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1080, 539);
+            this.ClientSize = new System.Drawing.Size(1137, 630);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
@@ -442,5 +457,6 @@
         private System.Windows.Forms.Label lblfecha;
         private System.Windows.Forms.Label lblmes;
         private System.Windows.Forms.ComboBox cmbmes;
+        private System.Windows.Forms.Button btnCancelar;
     }
 }

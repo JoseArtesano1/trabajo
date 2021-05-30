@@ -28,7 +28,8 @@ namespace pruebas.Vista
             InitializeComponent();
             CargaCombos();
             idcont = moduloInicio.ObtenerIdControl(Constants.Id_usuario).Last().IdControl;
-
+            checkBoxCalculo.Checked = false;
+            grupBoxCalculo.Visible = false;
         }
 
         private void CargaCombos()
@@ -130,7 +131,43 @@ namespace pruebas.Vista
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
-            moduloInicio.LimpiarTexto(this); cmbTipodia.SelectedIndex = -1; 
+            moduloInicio.LimpiarTexto(this);  moduloInicio.LimpiarComboyCheck(this);//cmbTipodia.SelectedIndex = -1; 
+            datagridDias.DataSource = "";
+            
+        }
+
+        private void btnCalculo_Click(object sender, EventArgs e)
+        {
+            if (DateTime.Compare(datePickStart.Value.Date, datePickFinish.Value.Date) < 0)
+            {
+                var dias = (int)(datePickFinish.Value - datePickStart.Value).TotalDays;
+                var vacasNaturales = (dias * 30) / 365.00;
+                lblNatural.Text = Math.Round(vacasNaturales, 2).ToString() + " días naturales";
+               
+                var vacasLaborales = (dias * 21) / 365.00;
+                lblLaboral.Text = Math.Round(vacasLaborales, 2).ToString() + " días laborales";
+
+            }
+            else
+            {
+                MessageBox.Show("la fecha del inicio debe ser inferior a la fecha final");
+            }
+        }
+
+        private void checkBoxCalculo_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBoxCalculo.Checked)
+            {  grupBoxCalculo.Visible = true;
+
+            }
+            else
+            {
+                grupBoxCalculo.Visible = false;
+                datePickStart.Value = DateTime.Today;
+                datePickFinish.Value = DateTime.Today;
+                lblNatural.Text = "";
+                lblLaboral.Text = "";
+            }
         }
 
         private void cmbTrabajador_SelectedIndexChanged(object sender, EventArgs e)

@@ -53,6 +53,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.txtusuario = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.btnControl = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.datagridUsuarios)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -215,6 +216,7 @@
             // panel6
             // 
             this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.panel6.Controls.Add(this.btnControl);
             this.panel6.Controls.Add(this.cmbAutoriza);
             this.panel6.Controls.Add(this.btnAlta);
             this.panel6.Controls.Add(this.btnCancelar);
@@ -352,6 +354,17 @@
             this.label2.TabIndex = 20;
             this.label2.Text = "NOMBRE";
             // 
+            // btnControl
+            // 
+            this.btnControl.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnControl.Location = new System.Drawing.Point(592, 289);
+            this.btnControl.Name = "btnControl";
+            this.btnControl.Size = new System.Drawing.Size(124, 70);
+            this.btnControl.TabIndex = 25;
+            this.btnControl.Text = "ELIMINAR CTRL";
+            this.btnControl.UseVisualStyleBackColor = true;
+            this.btnControl.Click += new System.EventHandler(this.btnControl_Click);
+            // 
             // FUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -398,5 +411,6 @@
         private System.Windows.Forms.TextBox txtusuario;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox cmbAutoriza;
+        private System.Windows.Forms.Button btnControl;
     }
 }

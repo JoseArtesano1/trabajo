@@ -23,14 +23,14 @@ namespace pruebas.Vista
             InitializeComponent();
             cmbAutoriza.SelectedIndex = -1;
             LLenarComboAutorizacion();
-            datagridUsuarios.DataSource = moduloInicio.CargaGridCategoria(btnAlta, btneliminar, txtnombre, cmbAutoriza, lblAutoriza);
+            datagridUsuarios.DataSource = moduloInicio.CargaGridCategoria(btnAlta, btneliminar, txtnombre, cmbAutoriza, lblAutoriza,btnControl);
             datagridUsuarios.Columns[0].Visible = false;
 
         }
                     
         private void Recarga()
         {
-            datagridUsuarios.DataSource = moduloInicio.CargaGridCategoria(btnAlta, btneliminar, txtnombre, cmbAutoriza, lblAutoriza);
+            datagridUsuarios.DataSource = moduloInicio.CargaGridCategoria(btnAlta, btneliminar, txtnombre, cmbAutoriza, lblAutoriza,btnControl);
             moduloInicio.LimpiarTexto(this);
             cmbAutoriza.SelectedIndex = -1;
         }
@@ -208,6 +208,30 @@ namespace pruebas.Vista
             moduloInicio.LimpiarTexto(this);
             cmbAutoriza.SelectedIndex = -1;
             btnAlta.Enabled = true;
+        }
+
+        private void btnControl_Click(object sender, EventArgs e)
+        {
+            var controlesUsuario = moduloInicio.ObtenerIdControl(iduser);
+            if (MessageBox.Show("Este proceso borra los controles del usuario: " + datagridUsuarios.CurrentRow.Cells[1].Value.ToString().ToUpper() + " de la bd, lo quieres hacer S/N", "CUIDADO", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                foreach (var controlUsuario in controlesUsuario)
+                {
+                  moduloInicio.OperarSql("delete from pyme.trabajadorcontrols where Control_IdControl=" + controlUsuario.IdControl + ";");
+                  moduloInicio.OperarSql("delete from pyme.periodocontrols where Control_IdControl=" + controlUsuario.IdControl + ";");
+                  moduloInicio.OperarSql("delete from pyme.cursocontrols where Control_IdControl=" + controlUsuario.IdControl + ";");
+                  moduloInicio.OperarSql("delete from pyme.epicontrols where Control_IdControl=" + controlUsuario.IdControl + ";");
+                }
+
+                moduloInicio.OperarSql("delete from pyme.controls where IdUsuario=" + iduser + ";");
+
+                if (MessageBox.Show("Este proceso borra la agenda del usuario: " + datagridUsuarios.CurrentRow.Cells[1].Value.ToString().ToUpper() + " de la bd, lo quieres hacer S/N", "CUIDADO", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    moduloInicio.OperarSql("delete from pyme.agenda where IdUsuario=" + iduser + ";");
+                }
+                    
+            }
+            else { MessageBox.Show("Usuario no seleccionado"); }
         }
     }
 }

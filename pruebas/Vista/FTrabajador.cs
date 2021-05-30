@@ -31,7 +31,8 @@ namespace pruebas.Vista
              cmbCategoria.SelectedIndex = -1;
             CargaCmbAsignado();
             idcont = moduloInicio.ObtenerIdControl(Constants.Id_usuario).Last().IdControl;
-
+            datePickpermiso.Visible = false;
+            lblPC.Visible = false;
         }
 
         private void btnCerrar_Click(object sender, EventArgs e)
@@ -73,7 +74,7 @@ namespace pruebas.Vista
                     datepickAlta.Value = DateTime.Parse(trabajador.FechaAlta);
                     datepickDni.Value = DateTime.Parse(trabajador.FechaDni);
                     datepickMedico.Value = DateTime.Parse(trabajador.FechaMedico);
-                    string fpermiso = moduloInicio.Obtenerdato("select FechaPermiso from empresa.trabajadors where IdTrabajador=" + idTrabajador + ";", 0);
+                    string fpermiso = moduloInicio.Obtenerdato("select FechaPermiso from pyme.trabajadors where IdTrabajador=" + idTrabajador + ";", 0);
                     if (fpermiso != "")
                     {   checkBoxCoche.Checked = true;
                         datePickpermiso.Value = DateTime.Parse(trabajador.FechaPermiso);
@@ -88,7 +89,7 @@ namespace pruebas.Vista
                 }
                 else 
                 {
-                    moduloInicio.LimpiarTexto(this); cmbCategoria.SelectedIndex = -1; 
+                    moduloInicio.LimpiarTexto(this); moduloInicio.LimpiarComboyCheck(this); //cmbCategoria.SelectedIndex = -1; 
                     MessageBox.Show("selecciona uno o debe dar de alta Trabajador"); btnAlta.Enabled = true;
                     VaciarDatagridAsignar(); cmbAsignado.Enabled = false;
                 }
@@ -347,6 +348,7 @@ namespace pruebas.Vista
         private void Limpiar()
         {   moduloInicio.LimpiarTexto(this);
             checboxActivo.Checked = false;
+            checkBoxCoche.Checked = false;
             cmbCategoria.SelectedIndex = -1;
         }
 

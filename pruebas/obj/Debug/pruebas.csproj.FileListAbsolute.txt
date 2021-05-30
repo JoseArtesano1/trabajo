@@ -1,6 +1,8 @@
-D:\Pruebas\pruebas\bin\Debug\pruebas.exe.config
-D:\Pruebas\pruebas\bin\Debug\pruebas.exe
-D:\Pruebas\pruebas\bin\Debug\pruebas.pdb
+D:\Pruebas\pruebas\bin\Debug\GestionTrabajadores.exe.config
+D:\Pruebas\pruebas\bin\Debug\GestionTrabajadores.exe.manifest
+D:\Pruebas\pruebas\bin\Debug\GestionTrabajadores.application
+D:\Pruebas\pruebas\bin\Debug\GestionTrabajadores.exe
+D:\Pruebas\pruebas\bin\Debug\GestionTrabajadores.pdb
 D:\Pruebas\pruebas\bin\Debug\BouncyCastle.Crypto.dll
 D:\Pruebas\pruebas\bin\Debug\EntityFramework.dll
 D:\Pruebas\pruebas\bin\Debug\EntityFramework.SqlServer.dll
@@ -16,8 +18,8 @@ D:\Pruebas\pruebas\bin\Debug\MySql.Data.EntityFramework.xml
 D:\Pruebas\pruebas\bin\Debug\Renci.SshNet.xml
 D:\Pruebas\pruebas\obj\Debug\pruebas.csprojAssemblyReference.cache
 D:\Pruebas\pruebas\obj\Debug\pruebas.csproj.ResolveComReference.cache
-D:\Pruebas\pruebas\obj\Debug\pruebas.Migrations.Inicial.resources
-D:\Pruebas\pruebas\obj\Debug\pruebas.Properties.Resources.resources
+D:\Pruebas\pruebas\obj\Debug\GestionTrabajadores.Migrations.primera.resources
+D:\Pruebas\pruebas\obj\Debug\GestionTrabajadores.Properties.Resources.resources
 D:\Pruebas\pruebas\obj\Debug\pruebas.Vista.FAgenda.resources
 D:\Pruebas\pruebas\obj\Debug\pruebas.Vista.FAsignacion.resources
 D:\Pruebas\pruebas\obj\Debug\pruebas.Vista.FAsignarDias.resources
@@ -30,6 +32,8 @@ D:\Pruebas\pruebas\obj\Debug\pruebas.Vista.FUsuario.resources
 D:\Pruebas\pruebas\obj\Debug\pruebas.Form1.resources
 D:\Pruebas\pruebas\obj\Debug\pruebas.csproj.GenerateResource.cache
 D:\Pruebas\pruebas\obj\Debug\pruebas.csproj.CoreCompileInputs.cache
+D:\Pruebas\pruebas\obj\Debug\GestionTrabajadores.exe.manifest
+D:\Pruebas\pruebas\obj\Debug\GestionTrabajadores.application
 D:\Pruebas\pruebas\obj\Debug\pruebas.csproj.CopyComplete
-D:\Pruebas\pruebas\obj\Debug\pruebas.exe
-D:\Pruebas\pruebas\obj\Debug\pruebas.pdb
+D:\Pruebas\pruebas\obj\Debug\GestionTrabajadores.exe
+D:\Pruebas\pruebas\obj\Debug\GestionTrabajadores.pdb

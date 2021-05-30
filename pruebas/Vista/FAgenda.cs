@@ -103,10 +103,10 @@ namespace pruebas.Vista
             {
                 foreach (var item in listadoIndividual)
                 {
-                    if (DateTime.Compare(item.FechaEvento, fecha) == 0)
+                    if (DateTime.Compare(item.FechaEvento, fecha.Date) == 0)
                     {                        
                         datagridAgenda.DataSource = moduloInicio.CargaGridyCombo("select IdAgenda, FechaEvento as Fecha,Asunto" +
-                    " from pyme.agenda a, pyme.usuarios u where u.IdUsuario= a.IdUsuario and FechaEvento=" + monthcalenAgenda.SelectionStart.Date + ";");
+                    " from pyme.agenda a, pyme.usuarios u where u.IdUsuario= a.IdUsuario and FechaEvento='" + fecha.ToString("yyyy-MM-dd HH:mm:ss") + "';");
                         datagridAgenda.Columns[0].Visible = false;
                     }
                     else { VaciarDataGrid(); }

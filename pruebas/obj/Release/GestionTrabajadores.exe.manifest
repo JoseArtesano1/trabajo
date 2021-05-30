@@ -1,10 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2">
-  <asmv1:assemblyIdentity name="GestionTrabajadores.exe" version="1.0.0.1" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
-  <description asmv2:iconFile="Gestion.ico" xmlns="urn:schemas-microsoft-com:asm.v1" />
+  <asmv1:assemblyIdentity name="GestionTrabajadores.exe" version="1.0.0.4" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
+  <description asmv2:iconFile="rompecabezas.ico" xmlns="urn:schemas-microsoft-com:asm.v1" />
   <application />
   <entryPoint>
-    <assemblyIdentity name="GestionTrabajadores" version="1.0.0.1" language="neutral" processorArchitecture="msil" />
+    <assemblyIdentity name="GestionTrabajadores" version="1.0.0.3" language="neutral" processorArchitecture="msil" />
     <commandLine file="GestionTrabajadores.exe" parameters="" />
   </entryPoint>
   <trustInfo>
@@ -79,14 +79,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="GestionTrabajadores.exe" size="728512">
-      <assemblyIdentity name="GestionTrabajadores" version="1.0.0.1" language="neutral" processorArchitecture="msil" />
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="GestionTrabajadores.exe" size="786368">
+      <assemblyIdentity name="GestionTrabajadores" version="1.0.0.3" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>SfVs/XDusaCjmORmgkMILbdgU/ACofXA3j0TiGh19ho=</dsig:DigestValue>
+        <dsig:DigestValue>ZDwCHgbyf6py9rfpGDqNz7ahAau1olkcaColWQXfXcA=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -147,13 +147,13 @@
       <dsig:DigestValue>L52Vp24EzLmf1lx8u7RAS35hQuueOp5eP1NXbV52Ed0=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="GestionTrabajadores.exe.config" size="1467">
+  <file name="GestionTrabajadores.exe.config" size="1469">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>HT6hPjA+OyMiXEvtfnXxyzGurYjSIIMvfdO8hfQ14dM=</dsig:DigestValue>
+      <dsig:DigestValue>BmjI41FKAfAE0iU5LI92QoPpi2N5lg0BJLMV5FnGLgA=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Recursos\agenda1.png" size="1853">
@@ -289,6 +289,15 @@
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
       <dsig:DigestValue>yQlT9/TUH8BGCzJrPeA4jiGlIeuofG0JH38uFvPWpG4=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="rompecabezas.ico" size="118662">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>mgGqS1V685Kbpo4tgSMq4P0Y+ord8r8MZDii86gHjtE=</dsig:DigestValue>
     </hash>
   </file>
 </asmv1:assembly>

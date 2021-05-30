@@ -15,10 +15,10 @@ using System.Windows.Forms;
 namespace pruebas.Controlador
 {
     public class ModuloInicio
-    {
-        string conexion = "server=localhost;User Id=root; Persist Security Info=True;database=Pyme;password=root";// cadena de conexión para trabajar con syntax smysql
+    {                              // 192.168.1.2   
+        string conexion = "server=192.168.1.2; User Id=root; Persist Security Info=True;database=Pyme;password=root";// cadena de conexión para trabajar con syntax smysql
               public  string[] consultas = new string[] { "CURSOS", "ALERTAS", "HORAS" };
-              public  string[] consultas2 = new string[] { "CURSOS", "ALERTAS","CONTROLES", "HORAS" };
+              public  string[] consultas2 = new string[] { "CURSOS", "ALERTAS", "HORAS", "CONTROLES" };
 
 
          public void InsertStartData()
@@ -157,18 +157,19 @@ namespace pruebas.Controlador
         }
 
         public  void bloqueo(System.Windows.Forms.Control root, System.Windows.Forms.Control root1,
-            System.Windows.Forms.Control root2, System.Windows.Forms.Control root3, System.Windows.Forms.Control root4, bool activar)
+            System.Windows.Forms.Control root2, System.Windows.Forms.Control root3, System.Windows.Forms.Control root4, System.Windows.Forms.Control root5, bool activar)
         {           
             root.Visible = activar;
             root1.Visible = activar;
             root2.Enabled = activar;
             root3.Visible = activar;
             root4.Visible = activar;
+            root5.Visible = activar;
         }
 
        
         public DataTable CargaGridCategoria(System.Windows.Forms.Control root, System.Windows.Forms.Control root1,
-            System.Windows.Forms.Control root2, System.Windows.Forms.Control root3, System.Windows.Forms.Control root4)
+            System.Windows.Forms.Control root2, System.Windows.Forms.Control root3, System.Windows.Forms.Control root4, System.Windows.Forms.Control root5)
         {
             if (ObtenerAutorizacion() == "A")
             {
@@ -176,7 +177,7 @@ namespace pruebas.Controlador
             }
             else
             {
-                bloqueo(root, root1, root2, root3, root4, false);
+                bloqueo(root, root1, root2, root3, root4,root5, false);
                 return CargaGridyCombo("select * from pyme.usuarios where IdUsuario=" + Constants.Id_usuario + ";");
             }
         }

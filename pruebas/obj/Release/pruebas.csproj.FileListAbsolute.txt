@@ -1,4 +1,6 @@
 D:\Pruebas\pruebas\bin\Release\GestionTrabajadores.exe.config
+D:\Pruebas\pruebas\bin\Release\GestionTrabajadores.exe.manifest
+D:\Pruebas\pruebas\bin\Release\GestionTrabajadores.application
 D:\Pruebas\pruebas\bin\Release\GestionTrabajadores.exe
 D:\Pruebas\pruebas\bin\Release\GestionTrabajadores.pdb
 D:\Pruebas\pruebas\bin\Release\BouncyCastle.Crypto.dll
@@ -16,6 +18,7 @@ D:\Pruebas\pruebas\bin\Release\MySql.Data.EntityFramework.xml
 D:\Pruebas\pruebas\bin\Release\Renci.SshNet.xml
 D:\Pruebas\pruebas\obj\Release\pruebas.csprojAssemblyReference.cache
 D:\Pruebas\pruebas\obj\Release\pruebas.csproj.ResolveComReference.cache
+D:\Pruebas\pruebas\obj\Release\GestionTrabajadores.Migrations.primera.resources
 D:\Pruebas\pruebas\obj\Release\GestionTrabajadores.Properties.Resources.resources
 D:\Pruebas\pruebas\obj\Release\pruebas.Vista.FAgenda.resources
 D:\Pruebas\pruebas\obj\Release\pruebas.Vista.FAsignacion.resources
@@ -29,11 +32,8 @@ D:\Pruebas\pruebas\obj\Release\pruebas.Vista.FUsuario.resources
 D:\Pruebas\pruebas\obj\Release\pruebas.Form1.resources
 D:\Pruebas\pruebas\obj\Release\pruebas.csproj.GenerateResource.cache
 D:\Pruebas\pruebas\obj\Release\pruebas.csproj.CoreCompileInputs.cache
+D:\Pruebas\pruebas\obj\Release\GestionTrabajadores.exe.manifest
+D:\Pruebas\pruebas\obj\Release\GestionTrabajadores.application
 D:\Pruebas\pruebas\obj\Release\pruebas.csproj.CopyComplete
 D:\Pruebas\pruebas\obj\Release\GestionTrabajadores.exe
 D:\Pruebas\pruebas\obj\Release\GestionTrabajadores.pdb
-D:\Pruebas\pruebas\bin\Release\GestionTrabajadores.exe.manifest
-D:\Pruebas\pruebas\bin\Release\GestionTrabajadores.application
-D:\Pruebas\pruebas\obj\Release\GestionTrabajadores.exe.manifest
-D:\Pruebas\pruebas\obj\Release\GestionTrabajadores.application
-D:\Pruebas\pruebas\obj\Release\GestionTrabajadores.Migrations.primera.resources

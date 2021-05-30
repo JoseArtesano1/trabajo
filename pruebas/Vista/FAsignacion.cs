@@ -26,7 +26,7 @@ namespace pruebas.Vista
             InitializeComponent();
             CargaCombos();
             GestionControles(false, false, false, false, false, false, false, false, false,false,false);
-        
+            cmbasignacion.Enabled = false;
         }
 
         private void btncerrar_Click(object sender, EventArgs e)
@@ -58,21 +58,24 @@ namespace pruebas.Vista
             string[] asignaciones = new string[] { "CURSOS", "EPIS", "HORAS" };
             string[] losmeses = new string[] {"ENERO","FEBRERO","MARZO","ABRIL","MAYO","JUNIO","JULIO","AGOSTO","SEPTIEMBRE",
             "OCTUBRE","NOVIEMBRE","DICIEMBRE"};
+                       
+                foreach (var item in asignaciones)
+                {
+                    cmbasignacion.Items.Add(item);
+                }
 
-            foreach (var item in asignaciones)
-            {
-                cmbasignacion.Items.Add(item);
-            }
+                foreach (var item in losmeses)
+                {
+                    cmbmes.Items.Add(item);
+                }
+            
+               
 
-            foreach(var item in losmeses)
-            {
-                cmbmes.Items.Add(item);
-            }
-            cmbCarga.DataSource = moduloInicio.CargaGridyCombo("select Nombre from pyme.cursoes where not exists(select *from pyme.trabajadorcursoes where IdCurso=Curso_IdCurso and Trabajador_IdTrabajador =" + idtrabajador + ");");
-            cmbCarga.ValueMember = "Nombre";
+        }
 
-            cmbCarga.DataSource = moduloInicio.CargaGridyCombo("select e.Nombre from pyme.epis e where not exists(select *from pyme.trabajadorepis t where e.IdEpi=t.IdEpi and t.IdTrabajador =" + idtrabajador + ");");
-            cmbCarga.ValueMember = "Nombre";
+        private void CmbTrabajador_SelectedValueChanged(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
         }
 
         private void CargaGridAsignacion(string sql)
@@ -87,23 +90,30 @@ namespace pruebas.Vista
             {
                idtrabajador = moduloInicio.ObtenerId("select IdTrabajador from pyme.trabajadors where Nombre='" + cmbTrabajador.SelectedValue.ToString() + "';");
 
-                   cmbCarga.SelectedIndex = -1;
-                    switch (cmbasignacion.SelectedIndex)
-                    {
+                switch (cmbasignacion.SelectedIndex)
+                    {   
                         case 0:
-                            
-                            CargaGridAsignacion("select Curso_IdCurso, Trabajador_IdTrabajador, Nombre, Duracion from pyme.cursoes, pyme.trabajadorcursoes where IdCurso=Curso_IdCurso and Trabajador_IdTrabajador =" + idtrabajador + ";");
+                        cmbCarga.DataSource = moduloInicio.CargaGridyCombo("select Nombre from pyme.cursoes where not exists(select *from pyme.trabajadorcursoes where IdCurso=Curso_IdCurso and Trabajador_IdTrabajador =" + idtrabajador + ");");
+                        cmbCarga.ValueMember = "Nombre";
+                        cmbCarga.SelectedIndex = -1;
+
+                        CargaGridAsignacion("select Curso_IdCurso, Trabajador_IdTrabajador, Nombre, Duracion from pyme.cursoes, pyme.trabajadorcursoes where IdCurso=Curso_IdCurso and Trabajador_IdTrabajador =" + idtrabajador + ";");
                              datagridAsignar.Columns[1].Visible = false;
                             GestionControles(true,false,false,true,false,false,true,false,false,false,false);
                             lblValor.Text = "CURSOS";
                             break;
+
                         case 1:
-                            
-                            CargaGridAsignacion("select t.IdEpi, t.IdTrabajador, e.Nombre, t.FechaEpi from pyme.epis e,  pyme.trabajadorepis t where e.IdEpi=t.IdEpi and t.IdTrabajador =" + idtrabajador + ";");
+                          cmbCarga.DataSource = moduloInicio.CargaGridyCombo("select e.Nombre from pyme.epis e where not exists(select *from pyme.trabajadorepis t where e.IdEpi=t.IdEpi and t.IdTrabajador =" + idtrabajador + ");");
+                        cmbCarga.ValueMember = "Nombre";
+                        cmbCarga.SelectedIndex = -1;
+
+                        CargaGridAsignacion("select t.IdEpi, t.IdTrabajador, e.Nombre, t.FechaEpi from pyme.epis e,  pyme.trabajadorepis t where e.IdEpi=t.IdEpi and t.IdTrabajador =" + idtrabajador + ";");
                               datagridAsignar.Columns[1].Visible = false;
                             GestionControles(true, false, true, false, true, false, true, false, true,false,false);
                             lblValor.Text = "EPIS";
                             break;
+
                         case 2:
                             CargaGridAsignacion("select e.IdExtra, e.horas as Horas, (e.horas*t.Valor) as Total from pyme.trabajadors t, pyme.extras e where t.IdTrabajador= e.IdTrabajador and t.IdTrabajador=" + idtrabajador + ";");
                             GestionControles(false, true, false, false, false, true, false, true, false,true,true);
@@ -222,7 +232,7 @@ namespace pruebas.Vista
                             }
                             id1 = 0; dato = null;
                         }
-                        else { MessageBox.Show("selecciona un curso"); }
+                        else { MessageBox.Show("selecciona un epi"); }
                         break;
 
                     case 2:
@@ -241,7 +251,7 @@ namespace pruebas.Vista
                             }
                             id1 = 0; dato = null;
                         }
-                        else { MessageBox.Show("selecciona un curso"); }
+                        else { MessageBox.Show("selecciona un período"); }
                         break;
                 }       
             }
@@ -252,6 +262,7 @@ namespace pruebas.Vista
         private void cmbTrabajador_SelectedIndexChanged(object sender, EventArgs e)
         {
             ActualizarControles();
+            cmbasignacion.Enabled = true;
             datagridAsignar.DataSource = null;
             datagridAsignar.Refresh();
         }
@@ -260,6 +271,15 @@ namespace pruebas.Vista
         {
             GestionControles(false, false, false, false, false, false, false, false, false,false,false);
             cmbasignacion.SelectedIndex = -1;cmbCarga.SelectedIndex = -1;
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            moduloInicio.LimpiarTexto(this); moduloInicio.LimpiarComboyCheck(this);
+            datagridAsignar.DataSource = "";
+            datagridAsignar.Columns.Clear();
+            GestionControles(false, false, false, false, false, false, false, false, false, false, false);
+            cmbasignacion.Enabled = false;
         }
 
         private void datagridAsignar_CellClick(object sender, DataGridViewCellEventArgs e)

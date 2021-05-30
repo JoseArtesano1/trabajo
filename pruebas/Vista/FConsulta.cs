@@ -47,9 +47,12 @@ namespace pruebas.Vista
 
         private void cmbConsulta_SelectedIndexChanged(object sender, EventArgs e)
         {
-            LimpiarCalendario(); 
+            LimpiarCalendario();
+            datagridalerta.DataSource = "";
+            datagridalerta.Columns.Clear();
             switch (cmbConsulta.SelectedIndex)
             {
+                
                 case 0:
                   cmbCarga.DataSource=  moduloInicio.CargaGridyCombo("select Nombre from pyme.cursoes");
                     cmbCarga.ValueMember = "Nombre"; 
@@ -62,15 +65,15 @@ namespace pruebas.Vista
                     break;
 
                 case 2:
-                    datagridalerta.DataSource = moduloInicio.CargaGridyCombo("select Nombre, Fecha_inicio, IdControl from pyme.usuarios u, pyme.controls c where u.IdUsuario = c.IdUsuario ;");
-                    GestionControles(false,false,false); 
-                    break;
-
-                case 3:
                     var tabla = moduloInicio.CargaGridyCombo("select t.Nombre, e.horas as Horas, (e.horas*t.Valor) as Total from pyme.trabajadors t, pyme.extras e where t.IdTrabajador= e.IdTrabajador;");
                     datagridalerta.DataSource = tabla;
                     var sumaTotal = tabla.Compute("SUM(Total)", ""); //funcion con nombre de la columna y un filtro
                     lblTotal.Text = sumaTotal.ToString(); GestionControles(false, false, true);
+                    break;
+
+                case 3:
+                     datagridalerta.DataSource = moduloInicio.CargaGridyCombo("select Nombre, Fecha_inicio, IdControl from pyme.usuarios u, pyme.controls c where u.IdUsuario = c.IdUsuario ;");
+                    GestionControles(false, false, false);
                     break;
             }
         }
