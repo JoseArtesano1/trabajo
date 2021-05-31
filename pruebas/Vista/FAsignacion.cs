@@ -94,7 +94,7 @@ namespace pruebas.Vista
                     {   
                         case 0:
                         cmbCarga.DataSource = moduloInicio.CargaGridyCombo("select Nombre from pyme.cursoes where not exists(select *from pyme.trabajadorcursoes where IdCurso=Curso_IdCurso and Trabajador_IdTrabajador =" + idtrabajador + ");");
-                        cmbCarga.ValueMember = "Nombre";
+                        cmbCarga.ValueMember = "Nombre";  //filtro en el combo para no repetir curso asignado
                         cmbCarga.SelectedIndex = -1;
 
                         CargaGridAsignacion("select Curso_IdCurso, Trabajador_IdTrabajador, Nombre, Duracion from pyme.cursoes, pyme.trabajadorcursoes where IdCurso=Curso_IdCurso and Trabajador_IdTrabajador =" + idtrabajador + ";");

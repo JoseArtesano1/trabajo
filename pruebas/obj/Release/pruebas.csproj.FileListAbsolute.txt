@@ -16,7 +16,6 @@ D:\Pruebas\pruebas\bin\Release\Google.Protobuf.xml
 D:\Pruebas\pruebas\bin\Release\MySql.Data.xml
 D:\Pruebas\pruebas\bin\Release\MySql.Data.EntityFramework.xml
 D:\Pruebas\pruebas\bin\Release\Renci.SshNet.xml
-D:\Pruebas\pruebas\obj\Release\pruebas.csprojAssemblyReference.cache
 D:\Pruebas\pruebas\obj\Release\pruebas.csproj.ResolveComReference.cache
 D:\Pruebas\pruebas\obj\Release\GestionTrabajadores.Migrations.primera.resources
 D:\Pruebas\pruebas\obj\Release\GestionTrabajadores.Properties.Resources.resources

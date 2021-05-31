@@ -137,7 +137,7 @@ namespace pruebas.Vista
             DateTime fecha = mcalendarioAlerta.SelectionStart.Date;  // obtenemos la fecha del calendario
             foreach (var item in moduloFechas.milistadotrabajador)
             {
-                if (DateTime.Compare(DateTime.Parse(item.FechaMedico), fecha) == 0)  // la comparamos con la base de datos
+                if (DateTime.Compare(DateTime.Parse(item.FechaMedico).AddDays(365), fecha) == 0)  // la comparamos con la base de datos
                 {
                     lblinforma.Text += " , " + item.Nombre;
                 }

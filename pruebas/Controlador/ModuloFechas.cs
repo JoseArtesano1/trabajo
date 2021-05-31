@@ -15,6 +15,7 @@ namespace pruebas.Controlador
    public class ModuloFechas
     {   
         ModuloInicio moduloInicio = new ModuloInicio();
+
         string conexion = "server=192.168.1.2;User Id=root; Persist Security Info=True;database=Pyme;password=root";
         public List<Trabajador> milistadotrabajador = new List<Trabajador>();
         public List<string> elementos = new List<string>();
@@ -179,10 +180,22 @@ namespace pruebas.Controlador
 
         public int CalculosFechas(string fechaSinCalculo, int ndias)
         {
-           DateTime fcambiada= ObtenerFechaDate(fechaSinCalculo);
-           DateTime fechafin= fcambiada.AddDays(ndias);// a la fecha del trabajador se le suma un plazo
-            var dias = fechafin - DateTime.Today; // saber los dias que faltan desde hoy hasta la fecha
-           return dias.Days;
+           
+            if (fechaSinCalculo != "")
+            {
+              DateTime fcambiada= ObtenerFechaDate(fechaSinCalculo);
+                DateTime fechafin = fcambiada.AddDays(ndias);// a la fecha del trabajador se le suma un plazo
+               var dias = fechafin - DateTime.Today; // saber los dias que faltan desde hoy hasta la fecha
+               return dias.Days;
+            }
+            else
+            {
+                DateTime fechaDefecto = DateTime.Today.AddDays(120);
+                var dias = fechaDefecto - DateTime.Today;
+                return dias.Days;
+            }
+           
+           
         }
 
         public DateTime CheckfechaModifAlta(MyDbContext contexto, int IdTrabr, DateTime fechaAlta)
@@ -299,6 +312,33 @@ namespace pruebas.Controlador
             {return PeriodoFechas = "DEL DIA " + uno.ToString("dd/MM/yyyy")
                     + "AL DIA " + dos.ToString("dd/MM/yyyy"); }
         }
+
+        //public DateTime Bisiesto(string fecha)  //devuelve fecha sumando 365 o 366 si es bisiesto
+        //{
+        //    DateTime valor;
+        //    int dias = 0;
+        //    int anno = int.Parse((ObtenerFechaDate(fecha).Year).ToString());
+        //    int mes = int.Parse((ObtenerFechaDate(fecha).Month).ToString());
+        //    if (anno%4==0 && anno % 100 != 0 || anno % 400 == 0)
+        //    {
+        //        if (mes > 2)
+        //        {dias = 365;
+        //         valor = DateTime.Parse(fecha).AddDays(dias);
+        //        }
+        //        else
+        //        {
+        //            dias = 366;
+        //            valor = DateTime.Parse(fecha).AddDays(dias);
+        //        }
+                                 
+        //        return valor ;
+        //    }
+        //    else
+        //    {   dias = 365;
+        //        valor=DateTime.Parse(fecha).AddDays(dias);
+        //        return valor;
+        //    }
+        //}
 
 
     }
