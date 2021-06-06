@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnCerrar = new System.Windows.Forms.Button();
             this.datagridUsuarios = new System.Windows.Forms.DataGridView();
             this.btnModificar = new System.Windows.Forms.Button();
@@ -43,6 +43,7 @@
             this.panel7 = new System.Windows.Forms.Panel();
             this.btneliminar = new System.Windows.Forms.Button();
             this.panel6 = new System.Windows.Forms.Panel();
+            this.btnControl = new System.Windows.Forms.Button();
             this.cmbAutoriza = new System.Windows.Forms.ComboBox();
             this.btnAlta = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
@@ -53,7 +54,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.txtusuario = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.btnControl = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.datagridUsuarios)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -81,14 +81,14 @@
             this.datagridUsuarios.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.datagridUsuarios.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.datagridUsuarios.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.HotTrack;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.datagridUsuarios.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.HotTrack;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.datagridUsuarios.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.datagridUsuarios.ColumnHeadersHeight = 34;
             this.datagridUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.datagridUsuarios.EnableHeadersVisualStyles = false;
@@ -96,22 +96,22 @@
             this.datagridUsuarios.Location = new System.Drawing.Point(6, 52);
             this.datagridUsuarios.Name = "datagridUsuarios";
             this.datagridUsuarios.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.datagridUsuarios.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.datagridUsuarios.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.datagridUsuarios.RowHeadersVisible = false;
             this.datagridUsuarios.RowHeadersWidth = 62;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.White;
-            this.datagridUsuarios.RowsDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
+            this.datagridUsuarios.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.datagridUsuarios.RowTemplate.Height = 28;
             this.datagridUsuarios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.datagridUsuarios.Size = new System.Drawing.Size(564, 176);
@@ -236,15 +236,26 @@
             this.panel6.Size = new System.Drawing.Size(1259, 386);
             this.panel6.TabIndex = 19;
             // 
+            // btnControl
+            // 
+            this.btnControl.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnControl.Location = new System.Drawing.Point(592, 289);
+            this.btnControl.Name = "btnControl";
+            this.btnControl.Size = new System.Drawing.Size(124, 70);
+            this.btnControl.TabIndex = 25;
+            this.btnControl.Text = "ELIMINAR CTRL";
+            this.btnControl.UseVisualStyleBackColor = true;
+            this.btnControl.Click += new System.EventHandler(this.btnControl_Click);
+            // 
             // cmbAutoriza
             // 
             this.cmbAutoriza.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.cmbAutoriza.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbAutoriza.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbAutoriza.FormattingEnabled = true;
-            this.cmbAutoriza.Location = new System.Drawing.Point(917, 207);
+            this.cmbAutoriza.Location = new System.Drawing.Point(836, 211);
             this.cmbAutoriza.Name = "cmbAutoriza";
-            this.cmbAutoriza.Size = new System.Drawing.Size(101, 30);
+            this.cmbAutoriza.Size = new System.Drawing.Size(101, 33);
             this.cmbAutoriza.TabIndex = 24;
             // 
             // btnAlta
@@ -273,10 +284,10 @@
             // 
             this.txtpass.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtpass.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtpass.Location = new System.Drawing.Point(917, 155);
+            this.txtpass.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtpass.Location = new System.Drawing.Point(836, 152);
             this.txtpass.Name = "txtpass";
-            this.txtpass.Size = new System.Drawing.Size(319, 28);
+            this.txtpass.Size = new System.Drawing.Size(319, 30);
             this.txtpass.TabIndex = 16;
             this.txtpass.Validating += new System.ComponentModel.CancelEventHandler(this.txtpass_Validating);
             // 
@@ -284,10 +295,10 @@
             // 
             this.txtnombre.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtnombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtnombre.Location = new System.Drawing.Point(848, 38);
+            this.txtnombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtnombre.Location = new System.Drawing.Point(836, 38);
             this.txtnombre.Name = "txtnombre";
-            this.txtnombre.Size = new System.Drawing.Size(388, 28);
+            this.txtnombre.Size = new System.Drawing.Size(417, 30);
             this.txtnombre.TabIndex = 14;
             this.txtnombre.Validating += new System.ComponentModel.CancelEventHandler(this.txtnombre_Validating);
             // 
@@ -296,11 +307,11 @@
             this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(737, 158);
+            this.label4.Location = new System.Drawing.Point(653, 157);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(136, 22);
+            this.label4.Size = new System.Drawing.Size(152, 25);
             this.label4.TabIndex = 22;
             this.label4.Text = "CONTRASEÑA";
             // 
@@ -309,11 +320,11 @@
             this.lblAutoriza.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblAutoriza.AutoSize = true;
-            this.lblAutoriza.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAutoriza.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAutoriza.ForeColor = System.Drawing.Color.White;
-            this.lblAutoriza.Location = new System.Drawing.Point(737, 215);
+            this.lblAutoriza.Location = new System.Drawing.Point(653, 214);
             this.lblAutoriza.Name = "lblAutoriza";
-            this.lblAutoriza.Size = new System.Drawing.Size(145, 22);
+            this.lblAutoriza.Size = new System.Drawing.Size(163, 25);
             this.lblAutoriza.TabIndex = 23;
             this.lblAutoriza.Text = "AUTORIZACIÓN";
             // 
@@ -322,11 +333,11 @@
             this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(737, 103);
+            this.label3.Location = new System.Drawing.Point(653, 102);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(91, 22);
+            this.label3.Size = new System.Drawing.Size(102, 25);
             this.label3.TabIndex = 21;
             this.label3.Text = "USUARIO";
             // 
@@ -334,10 +345,10 @@
             // 
             this.txtusuario.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtusuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtusuario.Location = new System.Drawing.Point(917, 100);
+            this.txtusuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtusuario.Location = new System.Drawing.Point(836, 97);
             this.txtusuario.Name = "txtusuario";
-            this.txtusuario.Size = new System.Drawing.Size(319, 28);
+            this.txtusuario.Size = new System.Drawing.Size(319, 30);
             this.txtusuario.TabIndex = 15;
             this.txtusuario.Validating += new System.ComponentModel.CancelEventHandler(this.txtusuario_Validating);
             // 
@@ -346,24 +357,13 @@
             this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(737, 44);
+            this.label2.Location = new System.Drawing.Point(653, 43);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(88, 22);
+            this.label2.Size = new System.Drawing.Size(98, 25);
             this.label2.TabIndex = 20;
             this.label2.Text = "NOMBRE";
-            // 
-            // btnControl
-            // 
-            this.btnControl.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnControl.Location = new System.Drawing.Point(592, 289);
-            this.btnControl.Name = "btnControl";
-            this.btnControl.Size = new System.Drawing.Size(124, 70);
-            this.btnControl.TabIndex = 25;
-            this.btnControl.Text = "ELIMINAR CTRL";
-            this.btnControl.UseVisualStyleBackColor = true;
-            this.btnControl.Click += new System.EventHandler(this.btnControl_Click);
             // 
             // FUsuario
             // 

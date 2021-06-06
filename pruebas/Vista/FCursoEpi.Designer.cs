@@ -325,7 +325,7 @@
             this.btncancelarC.ForeColor = System.Drawing.Color.Black;
             this.btncancelarC.Location = new System.Drawing.Point(428, 165);
             this.btncancelarC.Name = "btncancelarC";
-            this.btncancelarC.Size = new System.Drawing.Size(143, 34);
+            this.btncancelarC.Size = new System.Drawing.Size(151, 46);
             this.btncancelarC.TabIndex = 8;
             this.btncancelarC.Text = "CANCELAR";
             this.btncancelarC.UseVisualStyleBackColor = false;
@@ -339,7 +339,7 @@
             this.btnModifCur.ForeColor = System.Drawing.Color.Black;
             this.btnModifCur.Location = new System.Drawing.Point(242, 165);
             this.btnModifCur.Name = "btnModifCur";
-            this.btnModifCur.Size = new System.Drawing.Size(137, 34);
+            this.btnModifCur.Size = new System.Drawing.Size(143, 46);
             this.btnModifCur.TabIndex = 7;
             this.btnModifCur.Text = "MODIFICAR";
             this.btnModifCur.UseVisualStyleBackColor = false;
@@ -353,7 +353,7 @@
             this.btnaltaCur.ForeColor = System.Drawing.Color.Black;
             this.btnaltaCur.Location = new System.Drawing.Point(79, 165);
             this.btnaltaCur.Name = "btnaltaCur";
-            this.btnaltaCur.Size = new System.Drawing.Size(85, 34);
+            this.btnaltaCur.Size = new System.Drawing.Size(90, 46);
             this.btnaltaCur.TabIndex = 6;
             this.btnaltaCur.Text = "ALTA";
             this.btnaltaCur.UseVisualStyleBackColor = false;
@@ -427,7 +427,7 @@
             this.btncancelarE.ForeColor = System.Drawing.Color.Black;
             this.btncancelarE.Location = new System.Drawing.Point(407, 165);
             this.btncancelarE.Name = "btncancelarE";
-            this.btncancelarE.Size = new System.Drawing.Size(138, 34);
+            this.btncancelarE.Size = new System.Drawing.Size(144, 46);
             this.btncancelarE.TabIndex = 9;
             this.btncancelarE.Text = "CANCELAR";
             this.btncancelarE.UseVisualStyleBackColor = false;
@@ -439,9 +439,9 @@
             this.btnModificarEpi.BackColor = System.Drawing.Color.White;
             this.btnModificarEpi.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnModificarEpi.ForeColor = System.Drawing.Color.Black;
-            this.btnModificarEpi.Location = new System.Drawing.Point(217, 165);
+            this.btnModificarEpi.Location = new System.Drawing.Point(212, 165);
             this.btnModificarEpi.Name = "btnModificarEpi";
-            this.btnModificarEpi.Size = new System.Drawing.Size(151, 34);
+            this.btnModificarEpi.Size = new System.Drawing.Size(156, 46);
             this.btnModificarEpi.TabIndex = 8;
             this.btnModificarEpi.Text = "MODIFICAR";
             this.btnModificarEpi.UseVisualStyleBackColor = false;
@@ -453,9 +453,9 @@
             this.btnaltaEpi.BackColor = System.Drawing.Color.White;
             this.btnaltaEpi.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnaltaEpi.ForeColor = System.Drawing.Color.Black;
-            this.btnaltaEpi.Location = new System.Drawing.Point(67, 165);
+            this.btnaltaEpi.Location = new System.Drawing.Point(50, 165);
             this.btnaltaEpi.Name = "btnaltaEpi";
-            this.btnaltaEpi.Size = new System.Drawing.Size(82, 34);
+            this.btnaltaEpi.Size = new System.Drawing.Size(99, 46);
             this.btnaltaEpi.TabIndex = 7;
             this.btnaltaEpi.Text = "ALTA";
             this.btnaltaEpi.UseVisualStyleBackColor = false;

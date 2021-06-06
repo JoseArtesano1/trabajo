@@ -36,3 +36,4 @@ D:\Pruebas\pruebas\obj\Release\GestionTrabajadores.application
 D:\Pruebas\pruebas\obj\Release\pruebas.csproj.CopyComplete
 D:\Pruebas\pruebas\obj\Release\GestionTrabajadores.exe
 D:\Pruebas\pruebas\obj\Release\GestionTrabajadores.pdb
+D:\Pruebas\pruebas\obj\Release\pruebas.csprojAssemblyReference.cache

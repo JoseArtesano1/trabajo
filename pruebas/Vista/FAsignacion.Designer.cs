@@ -159,7 +159,7 @@
             this.btneliminar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btneliminar.Location = new System.Drawing.Point(348, 454);
             this.btneliminar.Name = "btneliminar";
-            this.btneliminar.Size = new System.Drawing.Size(115, 34);
+            this.btneliminar.Size = new System.Drawing.Size(115, 43);
             this.btneliminar.TabIndex = 1;
             this.btneliminar.Text = "ELIMINAR";
             this.btneliminar.UseVisualStyleBackColor = true;
@@ -244,9 +244,9 @@
             this.btnCancelar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelar.ForeColor = System.Drawing.Color.Black;
-            this.btnCancelar.Location = new System.Drawing.Point(428, 480);
+            this.btnCancelar.Location = new System.Drawing.Point(428, 472);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(135, 37);
+            this.btnCancelar.Size = new System.Drawing.Size(135, 45);
             this.btnCancelar.TabIndex = 15;
             this.btnCancelar.Text = "CANCELAR";
             this.btnCancelar.UseVisualStyleBackColor = true;
@@ -292,7 +292,7 @@
             this.btnaltaCurso.ForeColor = System.Drawing.Color.Black;
             this.btnaltaCurso.Location = new System.Drawing.Point(41, 403);
             this.btnaltaCurso.Name = "btnaltaCurso";
-            this.btnaltaCurso.Size = new System.Drawing.Size(79, 36);
+            this.btnaltaCurso.Size = new System.Drawing.Size(86, 47);
             this.btnaltaCurso.TabIndex = 10;
             this.btnaltaCurso.Text = "ALTA";
             this.btnaltaCurso.UseVisualStyleBackColor = true;
@@ -303,7 +303,7 @@
             this.btnaltaEpi.ForeColor = System.Drawing.Color.Black;
             this.btnaltaEpi.Location = new System.Drawing.Point(206, 403);
             this.btnaltaEpi.Name = "btnaltaEpi";
-            this.btnaltaEpi.Size = new System.Drawing.Size(76, 36);
+            this.btnaltaEpi.Size = new System.Drawing.Size(77, 47);
             this.btnaltaEpi.TabIndex = 9;
             this.btnaltaEpi.Text = "ALTA";
             this.btnaltaEpi.UseVisualStyleBackColor = true;
@@ -400,7 +400,7 @@
             this.btnaltaH.ForeColor = System.Drawing.Color.Black;
             this.btnaltaH.Location = new System.Drawing.Point(350, 403);
             this.btnaltaH.Name = "btnaltaH";
-            this.btnaltaH.Size = new System.Drawing.Size(76, 36);
+            this.btnaltaH.Size = new System.Drawing.Size(78, 47);
             this.btnaltaH.TabIndex = 0;
             this.btnaltaH.Text = "ALTA";
             this.btnaltaH.UseVisualStyleBackColor = true;

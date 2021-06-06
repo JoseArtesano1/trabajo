@@ -15,8 +15,8 @@ using System.Windows.Forms;
 namespace pruebas.Controlador
 {
     public class ModuloInicio
-    {                              // 192.168.1.2   
-        string conexion = "server=192.168.1.2;User Id=root; Persist Security Info=True;database=Pyme;password=root";// cadena de conexión para trabajar con syntax smysql
+    {                                
+        string conexion = "server=localhost;User Id=root; Persist Security Info=True;database=Pyme;password=root";// cadena de conexión para trabajar con syntax smysql
               public  string[] consultas = new string[] { "CURSOS", "ALERTAS", "HORAS" };
               public  string[] consultas2 = new string[] { "CURSOS", "ALERTAS", "HORAS", "CONTROLES" };
 

@@ -44,9 +44,9 @@
             // 
             this.btnaceptar.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnaceptar.AutoSize = true;
-            this.btnaceptar.Location = new System.Drawing.Point(427, 329);
+            this.btnaceptar.Location = new System.Drawing.Point(435, 337);
             this.btnaceptar.Name = "btnaceptar";
-            this.btnaceptar.Size = new System.Drawing.Size(184, 44);
+            this.btnaceptar.Size = new System.Drawing.Size(191, 49);
             this.btnaceptar.TabIndex = 0;
             this.btnaceptar.Text = "ACEPTAR";
             this.btnaceptar.UseVisualStyleBackColor = true;
@@ -55,11 +55,11 @@
             // txtPass
             // 
             this.txtPass.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtPass.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPass.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPass.ForeColor = System.Drawing.SystemColors.InactiveCaption;
-            this.txtPass.Location = new System.Drawing.Point(396, 221);
+            this.txtPass.Location = new System.Drawing.Point(404, 229);
             this.txtPass.Name = "txtPass";
-            this.txtPass.Size = new System.Drawing.Size(277, 32);
+            this.txtPass.Size = new System.Drawing.Size(292, 35);
             this.txtPass.TabIndex = 2;
             this.txtPass.Text = "CONTRASEÑA";
             this.txtPass.Enter += new System.EventHandler(this.txtPass_Enter);
@@ -68,11 +68,11 @@
             // txtUsuario
             // 
             this.txtUsuario.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txtUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUsuario.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtUsuario.ForeColor = System.Drawing.SystemColors.InactiveCaption;
-            this.txtUsuario.Location = new System.Drawing.Point(396, 142);
+            this.txtUsuario.Location = new System.Drawing.Point(404, 150);
             this.txtUsuario.Name = "txtUsuario";
-            this.txtUsuario.Size = new System.Drawing.Size(277, 32);
+            this.txtUsuario.Size = new System.Drawing.Size(292, 35);
             this.txtUsuario.TabIndex = 1;
             this.txtUsuario.Text = "USUARIO";
             this.txtUsuario.Enter += new System.EventHandler(this.txtUsuario_Enter);
@@ -84,7 +84,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(225, 431);
+            this.panel1.Size = new System.Drawing.Size(225, 446);
             this.panel1.TabIndex = 5;
             this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
             // 
@@ -115,11 +115,11 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.label1.Location = new System.Drawing.Point(479, 33);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(117, 37);
+            this.label1.Size = new System.Drawing.Size(128, 40);
             this.label1.TabIndex = 9;
             this.label1.Text = "LOGIN";
             // 
@@ -128,7 +128,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
-            this.ClientSize = new System.Drawing.Size(852, 431);
+            this.ClientSize = new System.Drawing.Size(869, 446);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnminimizar);
             this.Controls.Add(this.btncerrar);
