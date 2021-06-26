@@ -177,9 +177,11 @@ namespace pruebas.Vista
 
         private void btnaltaH_Click(object sender, EventArgs e)
         {
+           string miruta= moduloTexto.rutah;
             Controlar();
             if (txtHoras.Text == "") { MessageBox.Show("Introduce Nº horas"); txtHoras.Focus(); return; }
             if (cmbmes.SelectedIndex == -1) { MessageBox.Show("Selecciona mes"); cmbmes.Focus(); return; }
+            if(moduloTexto.isFileOpen(miruta)) { MessageBox.Show("cierre el documento");  return; }
             using (var contexto= new MyDbContext())
             {
                 Extra extra = new Extra { horas = double.Parse(txtHoras.Text), IdTrabajador = idtrabajador };//ojo
@@ -237,7 +239,7 @@ namespace pruebas.Vista
 
                     case 2:
                         if (id1 != 0 || dato != null)
-                        {
+                         {
                             if (MessageBox.Show("Este proceso borra la extra asignada " +
                                                " de la bd, lo quieres hacer S/N", "CUIDADO", MessageBoxButtons.YesNo) == DialogResult.Yes)
                             {

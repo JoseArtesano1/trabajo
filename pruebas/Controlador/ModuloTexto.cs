@@ -14,6 +14,8 @@ namespace pruebas.Controlador
     {
         ModuloInicio moduloInicio = new ModuloInicio();
         ModuloFechas moduloFechas = new ModuloFechas();
+       public string rutah = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "\\horas.docx";
+      
         public void AbrirLeer()
         {
             var fileContent = string.Empty;
@@ -121,39 +123,41 @@ namespace pruebas.Controlador
         {
             string ruta = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
 
-            //documento
-            objWord.Application objAplicacion = new objWord.Application();
-            objWord.Document objDocumento = objAplicacion.Documents.Add();
-
-            //tabla
-            CargaTablaTitulo(objDocumento, "VACACIONES ", nombre.ToUpper());
-
-            //parrafo
-            objWord.Paragraph objParrfafo1 = objDocumento.Content.Paragraphs.Add(Type.Missing);
-            CargaParrafo(objParrfafo1, "EL TRABAJADOR " + nombre.ToUpper() +
-                " CON DNI/NIE: ", moduloInicio.TrabajadoresEmpresa().Where(x => x.Nombre == nombre).FirstOrDefault().Dni +
-                " QUE DESARROLLA SU ACTIVIDAD PROFESIONAL COMO TRABAJADOR, " +
-                " EN LA EMPRESA JOSE ANTONIO, SL RECONOCE QUE: ", 50);
-
-            objWord.Paragraph objParrfafo2 = objDocumento.Content.Paragraphs.Add(Type.Missing);
-           CargaParrafo(objParrfafo2, " DISFRUTA, " + moduloFechas.OpcionDias(fecha1, fecha2),
-                ", DE LAS VACACIONES PERTENECIENTES AL AÑO  " + DateTime.Today.Year, 140);
-
-            objWord.Paragraph objParrfafo3 = objDocumento.Content.Paragraphs.Add(Type.Missing);
-            CargaParrafo(objParrfafo3, "EN BURGOS A.  ",  
-                DateTime.Today.ToLongDateString().ToUpper() , 240);
-
-            objWord.Paragraph objParrfafo4 = objDocumento.Content.Paragraphs.Add(Type.Missing);
-            CargaParrafo(objParrfafo4, "FDO.  ", nombre.ToUpper(), 40);
-
-            objWord.Paragraph objParrfafo5 = objDocumento.Content.Paragraphs.Add(Type.Missing);
-            CargaParrafo(objParrfafo5, "DNI/NIE: ", moduloInicio.TrabajadoresEmpresa()
-                .Where(x => x.Nombre == nombre).FirstOrDefault().Dni, 5);
-
-            objDocumento.SaveAs2(ruta + "\\Vacaciones.docx");
            
-            objDocumento.Close();
-            objAplicacion.Quit();
+                //documento
+                objWord.Application objAplicacion = new objWord.Application();
+                objWord.Document objDocumento = objAplicacion.Documents.Add();
+
+                //tabla
+                CargaTablaTitulo(objDocumento, "VACACIONES ", nombre.ToUpper());
+
+                //parrafo
+                objWord.Paragraph objParrfafo1 = objDocumento.Content.Paragraphs.Add(Type.Missing);
+                CargaParrafo(objParrfafo1, "EL TRABAJADOR " + nombre.ToUpper() +
+                    " CON DNI/NIE: ", moduloInicio.TrabajadoresEmpresa().Where(x => x.Nombre == nombre).FirstOrDefault().Dni +
+                    " QUE DESARROLLA SU ACTIVIDAD PROFESIONAL COMO TRABAJADOR, " +
+                    " EN LA EMPRESA JOSE ANTONIO, SL RECONOCE QUE: ", 50);
+
+                objWord.Paragraph objParrfafo2 = objDocumento.Content.Paragraphs.Add(Type.Missing);
+                CargaParrafo(objParrfafo2, " DISFRUTA, " + moduloFechas.OpcionDias(fecha1, fecha2),
+                     ", DE LAS VACACIONES PERTENECIENTES AL AÑO  " + DateTime.Today.Year, 140);
+
+                objWord.Paragraph objParrfafo3 = objDocumento.Content.Paragraphs.Add(Type.Missing);
+                CargaParrafo(objParrfafo3, "EN BURGOS A.  ",
+                    DateTime.Today.ToLongDateString().ToUpper(), 240);
+
+                objWord.Paragraph objParrfafo4 = objDocumento.Content.Paragraphs.Add(Type.Missing);
+                CargaParrafo(objParrfafo4, "FDO.  ", nombre.ToUpper(), 40);
+
+                objWord.Paragraph objParrfafo5 = objDocumento.Content.Paragraphs.Add(Type.Missing);
+                CargaParrafo(objParrfafo5, "DNI/NIE: ", moduloInicio.TrabajadoresEmpresa()
+                    .Where(x => x.Nombre == nombre).FirstOrDefault().Dni, 5);
+
+                objDocumento.SaveAs2(ruta + "\\Vacaciones.docx");
+
+                objDocumento.Close();
+                objAplicacion.Quit();
+           
         }
 
         public string MovimientoTrabajador(bool alta,string fecha)
@@ -218,16 +222,20 @@ namespace pruebas.Controlador
         }
 
         public void GenerarWordHoras(string valor, string elmes, double horas)
-        {
-            string ruta = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "\\horas.docx";
-            if (System.IO.File.Exists(ruta))
+        {   
+            //string ruta = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "\\horas.docx";
+            if (System.IO.File.Exists(rutah))
             {
+                if (!isFileOpen(rutah)) { 
+                
                 object ObjMiss = System.Reflection.Missing.Value;
 
                 Trabajador trabajador = moduloInicio.TrabajadoresEmpresa().Where(x => x.Nombre == valor).FirstOrDefault();
                 //documento referencias en el word las pasamos a objetos
+
                 objWord.Application objAplicacion = new objWord.Application();
-                object miruta = ruta;
+                
+                object miruta = rutah;
                 object nombre = "trabajador"; object nombre1 = "trabajador1"; object nombre2 = "trabajador2";
                 object nombre3 = "trabajador3"; object nombre4 = "trabajador4";
                 object dni = "dni"; object dni1 = "dni1";
@@ -235,10 +243,10 @@ namespace pruebas.Controlador
                 object elaño = "años";
                 object total = "total";
                 object fechaHoy = "fechaH"; object fechaHoy1 = "fechaH1";
-                objWord.Document objDocumento = objAplicacion.Documents.Open(miruta, ref ObjMiss);
+                objWord.Document objDocumento = objAplicacion.Documents.Open(miruta, ref ObjMiss); 
                 // los objetos los pasamos a objWord
                 objWord.Range nom = objDocumento.Bookmarks.get_Item(ref nombre).Range;
-                nom.Text = trabajador.Nombre;
+                nom.Text = trabajador.Nombre;   
                 objWord.Range nom1 = objDocumento.Bookmarks.get_Item(ref nombre1).Range;
                 nom1.Text = trabajador.Nombre;
                 objWord.Range nom2 = objDocumento.Bookmarks.get_Item(ref nombre2).Range;
@@ -281,10 +289,24 @@ namespace pruebas.Controlador
                 objDocumento.Bookmarks.Add("total", ref rango6);
                 objDocumento.Close();
                 objAplicacion.Quit();
-
+                }
+                
             }
             else { MessageBox.Show("el archivo no existe"); }
           
         }
+
+        public bool isFileOpen(string ruta)
+        {            
+            try
+            {
+                System.IO.FileStream fs = System.IO.File.OpenWrite(ruta);
+                fs.Close();
+            }
+            catch (IOException) { return  true; }
+
+            return  false;
+        }
+
     }
 }

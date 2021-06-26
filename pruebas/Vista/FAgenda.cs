@@ -81,38 +81,20 @@ namespace pruebas.Vista
 
         private void ActualizarGrid()
         {
-            var listadoFechas = moduloInicio.ObtenerAgenda();
-            var listadoIndividual = listadoFechas.Where(x => x.IdUsuario == Constants.Id_usuario).ToList();
-            DateTime fecha = monthcalenAgenda.SelectionStart.Date;
+           DateTime fecha = monthcalenAgenda.SelectionStart.Date;
 
             if (moduloInicio.ObtenerAutorizacion() == "A")
-            {
-                foreach (var item in listadoFechas)
-                {
-                    if (DateTime.Compare(item.FechaEvento, fecha.Date) == 0)
-                    {                        
+            {                                     
                         datagridAgenda.DataSource = moduloInicio.CargaGridyCombo("select IdAgenda, Nombre,FechaEvento as Fecha,Asunto from pyme.agenda a, pyme.usuarios u where u.IdUsuario= a.IdUsuario and  FechaEvento='" + fecha.ToString("yyyy-MM-dd HH:mm:ss") + "';");  
-                    
-                        datagridAgenda.Columns[0].Visible = false;
-                    }
-                    else { VaciarDataGrid(); }
-                }
-                    
+                         datagridAgenda.Columns[0].Visible = false;
+                                        
             }
             else
-            {
-                foreach (var item in listadoIndividual)
-                {
-                    if (DateTime.Compare(item.FechaEvento, fecha.Date) == 0)
-                    {                        
+            {                              
                         datagridAgenda.DataSource = moduloInicio.CargaGridyCombo("select IdAgenda, FechaEvento as Fecha,Asunto" +
-                    " from pyme.agenda a, pyme.usuarios u where u.IdUsuario= a.IdUsuario and FechaEvento='" + fecha.ToString("yyyy-MM-dd HH:mm:ss") + "';");
+                    " from pyme.agenda a, pyme.usuarios u where u.IdUsuario= a.IdUsuario and a.IdUsuario= "+ Constants.Id_usuario + " and FechaEvento='" + fecha.ToString("yyyy-MM-dd HH:mm:ss") + "';");
                         datagridAgenda.Columns[0].Visible = false;
-                    }
-                    else { VaciarDataGrid(); }
-
-                }
-                    
+                 
             }
            
         }
@@ -142,9 +124,7 @@ namespace pruebas.Vista
 
 
         private void btnmodificar_Click(object sender, EventArgs e)
-        {
-            if (txtAsunto.Text == "") { MessageBox.Show("introduce un asunto"); txtAsunto.Focus(); return; }
-
+        {          
             if (txtAsunto.Text!="")
             {
                 using (var contexto = new MyDbContext())
@@ -162,7 +142,7 @@ namespace pruebas.Vista
                 btnAlta.Enabled = true;
                 VaciarDataGrid();
             }
-            else{ MessageBox.Show("Selecciona un Asunto");}
+            else{ MessageBox.Show("introduce un asunto"); txtAsunto.Focus(); return; }
                            
         }
 

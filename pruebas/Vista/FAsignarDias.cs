@@ -22,6 +22,7 @@ namespace pruebas.Vista
         string fInicial, fFinal;
         int idcont, idTrab;
         DateTime fechaInicio, fechaFin;
+       
         
         public FAsignarDias()
         {
@@ -55,11 +56,12 @@ namespace pruebas.Vista
              fechaFin = datepickFin.Value.Date;
             string fIni = moduloFechas.ObtenerFecha(fechaInicio);
             string fFin = moduloFechas.ObtenerFecha(fechaFin);
+            
 
             if (cmbTrabajador.SelectedIndex == -1) { MessageBox.Show("Selecciona trabajador"); cmbTrabajador.Focus(); return; }
             if (cmbTipodia.SelectedIndex == -1) { MessageBox.Show("Selecciona tipo"); cmbTipodia.Focus(); return; }
            
-                       
+
             int idtp = moduloInicio.ObtenerId("select IdTipoDia from pyme.tipodias where Denominacion='" + cmbTipodia.SelectedValue.ToString() + "';");
             idTrab = moduloInicio.ObtenerId("select IdTrabajador from pyme.trabajadors where Nombre='" + cmbTrabajador.SelectedValue.ToString() + "';");
             ActualizarGrid(idTrab);
