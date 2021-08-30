@@ -17,7 +17,7 @@ namespace pruebas.Vista
     {
         ModuloInicio moduloInicio = new ModuloInicio();
         ModuloFechas moduloFechas = new ModuloFechas();
-       
+      
 
         public FConsulta()
         {
@@ -27,7 +27,7 @@ namespace pruebas.Vista
                 CargaCombo(moduloInicio.consultas2);
             }
             else { CargaCombo(moduloInicio.consultas); }
-            GestionControles(false,false,false);
+            GestionControles(false,false,false,false, false);
         }
 
 
@@ -39,10 +39,13 @@ namespace pruebas.Vista
             }
         }
 
-        private void GestionControles(bool cierto, bool cierto1, bool cierto2)
+        
+        private void GestionControles(bool cierto, bool cierto1, bool cierto2, bool cierto3, bool cierto4)
         {   cmbCarga.Visible = cierto;
             lblcarga.Visible = cierto1;
             lblTotal.Visible = cierto2;
+            cmbYear.Visible = cierto3;
+            lblYear.Visible = cierto4;
         }
 
         private void cmbConsulta_SelectedIndexChanged(object sender, EventArgs e)
@@ -54,45 +57,51 @@ namespace pruebas.Vista
             {
                 
                 case 0:
-                  cmbCarga.DataSource=  moduloInicio.CargaGridyCombo("select Nombre from pyme.cursoes");
+                    cmbCarga.DataSource=  moduloInicio.CargaGridyCombo("select Nombre from pyme.cursoes");
                     cmbCarga.ValueMember = "Nombre"; 
-                    GestionControles(true,true,false); cmbCarga.SelectedIndex = -1;
+                    GestionControles(true,true,false,false,false); cmbCarga.SelectedIndex = -1;
                     break;
                 case 1:
                     datagridalerta.DataSource = moduloFechas.CargaGridAlerta();
                     MarcarCalendario();
-                    GestionControles(false,false,false); 
+                    GestionControles(false,false,false,false,false); 
                     break;
 
                 case 2:
                     var tabla = moduloInicio.CargaGridyCombo("select t.Nombre, e.horas as Horas, (e.horas*t.Valor) as Total from pyme.trabajadors t, pyme.extras e where t.IdTrabajador= e.IdTrabajador;");
                     datagridalerta.DataSource = tabla;
                     var sumaTotal = tabla.Compute("SUM(Total)", ""); //funcion con nombre de la columna y un filtro
-                    lblTotal.Text = sumaTotal.ToString(); GestionControles(false, false, true);
+                    lblTotal.Text = sumaTotal.ToString(); GestionControles(false, false, true,false,false);
                     break;
 
                 case 3:
-                     datagridalerta.DataSource = moduloInicio.CargaGridyCombo("select Nombre, Fecha_inicio, IdControl from pyme.usuarios u, pyme.controls c where u.IdUsuario = c.IdUsuario ;");
-                    GestionControles(false, false, false);
+                    //datagridalerta.DataSource = moduloInicio.CargaGridyCombo("select Nombre, FechaInicio as Inicio, FechaFin as Fin, Denominacion, TIMESTAMPDIFF(day,str_to_date(FechaFin,'%d/%m/%Y'), str_to_date(FechaInicio,'%d/%m/%Y')) as Días_Naturales from pyme.periodoes p, pyme.trabajadors t, pyme.tipodias td where p.IdTrabajador = t.IdTrabajador and p.IdTipoDia = td.IdTipoDia; ");
+                    cmbYear.DataSource = moduloInicio.years;
+                    GestionControles(false, false, false, true, true); cmbYear.SelectedIndex = -1;
+                    break;
+
+                case 4:
+                    datagridalerta.DataSource = moduloInicio.CargaGridyCombo("select Nombre, Fecha_inicio, IdControl from pyme.usuarios u, pyme.controls c where u.IdUsuario = c.IdUsuario ;");
+                    GestionControles(false, false, false, false, false);
                     break;
             }
         }
 
         private void cmbCarga_SelectedIndexChanged(object sender, EventArgs e)
-        {
+        {           
+            datagridalerta.DataSource = "";
             if (cmbCarga.SelectedIndex != -1)
             {
-             datagridalerta.DataSource = moduloInicio.CargaGridyCombo("select t.Nombre, c.Nombre as Curso, c.Duracion from pyme.trabajadors t, pyme.cursoes c, pyme.trabajadorcursoes where IdCurso = Curso_IdCurso and IdTrabajador = Trabajador_IdTrabajador and c.Nombre ='" + cmbCarga.SelectedValue.ToString() + "';");
+                datagridalerta.DataSource = moduloInicio.CargaGridyCombo("select t.Nombre, c.Nombre as Curso, c.Duracion from pyme.trabajadors t, pyme.cursoes c, pyme.trabajadorcursoes where IdCurso = Curso_IdCurso and IdTrabajador = Trabajador_IdTrabajador and c.Nombre ='" + cmbCarga.SelectedValue.ToString() + "';");
             }
             else { MessageBox.Show("selecciona un curso"); }
- 
+
         }
 
      
 
         private void MarcarCalendario()
-        {
-            
+        {            
             foreach (var item in moduloFechas.milistadotrabajador)
             {               
                 if(moduloFechas.CalculosFechas(item.FechaMedico, 365) < 60)
@@ -163,6 +172,14 @@ namespace pruebas.Vista
             this.Close();
         }
 
-
+        private void cmbYear_SelectedIndexChanged(object sender, EventArgs e)
+        {  
+            datagridalerta.DataSource = "";
+            
+            if (cmbYear.SelectedIndex != -1)
+            {  datagridalerta.DataSource = moduloFechas.CargaGridDias1(cmbYear.SelectedValue.ToString());
+            }
+            else { MessageBox.Show("selecciona un año"); }
+        }
     }
 }

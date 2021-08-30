@@ -108,7 +108,9 @@ namespace pruebas.Vista
 
         private void btnAlta_Click(object sender, EventArgs e)
         {
+            if (moduloTexto.isFileOpen(moduloTexto.rutaAB)) { MessageBox.Show("cierre el documento"); return; }
             if (!checboxActivo.Checked) { MessageBox.Show("Activa el trabajador"); checboxActivo.Focus(); return; }
+           
             ControlDatos();
             DateTime fechaAlta = datepickAlta.Value;
             DateTime fechaDni = datepickDni.Value;
@@ -205,7 +207,8 @@ namespace pruebas.Vista
         }
 
         private void btnModificar_Click(object sender, EventArgs e)
-        {           
+        {
+            if (moduloTexto.isFileOpen(moduloTexto.rutaAB)) { MessageBox.Show("cierre el documento"); return; }
             if (txtdni.Text != "")
             {
                 ControlDatos();
@@ -263,7 +266,7 @@ namespace pruebas.Vista
 
         public void ControlDatos()
         {
-            
+           
             if (txtnombre.Text == "") { MessageBox.Show("Introduce nombre"); txtnombre.Focus(); return; }
             if (txtdni.Text == "") { MessageBox.Show("Introduce dni/nie"); txtdni.Focus(); return; }
             if (txtdireccion.Text == "") { MessageBox.Show("Introduce dirección"); txtdireccion.Focus(); return; }

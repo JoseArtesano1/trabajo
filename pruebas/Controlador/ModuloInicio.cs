@@ -17,8 +17,9 @@ namespace pruebas.Controlador
     public class ModuloInicio
     {                                
         string conexion = "server=localhost;User Id=root; Persist Security Info=True;database=Pyme;password=root";// cadena de conexión para trabajar con syntax smysql
-              public  string[] consultas = new string[] { "CURSOS", "ALERTAS", "HORAS" };
-              public  string[] consultas2 = new string[] { "CURSOS", "ALERTAS", "HORAS", "CONTROLES" };
+              public  string[] consultas = new string[] { "CURSOS", "ALERTAS", "HORAS", "PERIODOS" };
+              public  string[] consultas2 = new string[] { "CURSOS", "ALERTAS", "HORAS", "PERIODOS", "CONTROLES" };
+              public string[] years = new string[] { "2021", "2022", "2023", "2024", "2025", "2026", "2027", "2028", "2029", "2030" };
 
 
          public void InsertStartData()

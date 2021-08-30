@@ -15,7 +15,8 @@ namespace pruebas.Controlador
         ModuloInicio moduloInicio = new ModuloInicio();
         ModuloFechas moduloFechas = new ModuloFechas();
        public string rutah = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "\\horas.docx";
-      
+       public string ruta = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) +"\\Vacaciones.docx";
+       public  string rutaAB = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "\\ALTA_BAJA.docx";
         public void AbrirLeer()
         {
             var fileContent = string.Empty;
@@ -44,7 +45,7 @@ namespace pruebas.Controlador
                             fileContent = reader.ReadLine();
                             if (fileContent != ""){vale=  ComprobarLinea(fileContent); }
                             
-                        } while (fileContent!= ""&& vale);
+                        } while (fileContent!= ""&& vale);   //continua leyendo mientras tenga contenido y dias validos
              
                     }
                 }else { MessageBox.Show("Seleccione un archivo"); }
@@ -120,10 +121,7 @@ namespace pruebas.Controlador
 
 
         public void GenerarWordDias(string nombre,  DateTime fecha1, DateTime fecha2)
-        {
-            string ruta = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
-
-           
+        {           
                 //documento
                 objWord.Application objAplicacion = new objWord.Application();
                 objWord.Document objDocumento = objAplicacion.Documents.Add();
@@ -153,8 +151,8 @@ namespace pruebas.Controlador
                 CargaParrafo(objParrfafo5, "DNI/NIE: ", moduloInicio.TrabajadoresEmpresa()
                     .Where(x => x.Nombre == nombre).FirstOrDefault().Dni, 5);
 
-                objDocumento.SaveAs2(ruta + "\\Vacaciones.docx");
-
+            
+                objDocumento.SaveAs2(ruta);
                 objDocumento.Close();
                 objAplicacion.Quit();
            
@@ -168,7 +166,7 @@ namespace pruebas.Controlador
 
         public void GenerarWordAlta_Baja(Trabajador eltrabajador, string cate, bool activar)
         {
-            string ruta = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+           
               string[] misfechas;
         //documento
             objWord.Application objAplicacion = new objWord.Application();
@@ -215,7 +213,7 @@ namespace pruebas.Controlador
             }
            
 
-            objDocumento.SaveAs2(ruta + "\\ALTA_BAJA.docx");
+            objDocumento.SaveAs2(rutaAB);
 
             objDocumento.Close();
             objAplicacion.Quit();
@@ -223,10 +221,10 @@ namespace pruebas.Controlador
 
         public void GenerarWordHoras(string valor, string elmes, double horas)
         {   
-            //string ruta = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "\\horas.docx";
+            
             if (System.IO.File.Exists(rutah))
             {
-                if (!isFileOpen(rutah)) { 
+              //  if (!isFileOpen(rutah)) { 
                 
                 object ObjMiss = System.Reflection.Missing.Value;
 
@@ -289,7 +287,7 @@ namespace pruebas.Controlador
                 objDocumento.Bookmarks.Add("total", ref rango6);
                 objDocumento.Close();
                 objAplicacion.Quit();
-                }
+             //   }
                 
             }
             else { MessageBox.Show("el archivo no existe"); }

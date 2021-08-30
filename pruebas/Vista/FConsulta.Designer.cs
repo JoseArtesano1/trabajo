@@ -48,6 +48,8 @@
             this.lblinforma = new System.Windows.Forms.Label();
             this.mcalendarioAlerta = new System.Windows.Forms.MonthCalendar();
             this.grpCon = new System.Windows.Forms.GroupBox();
+            this.lblYear = new System.Windows.Forms.Label();
+            this.cmbYear = new System.Windows.Forms.ComboBox();
             this.lblTotal = new System.Windows.Forms.Label();
             this.lblcarga = new System.Windows.Forms.Label();
             this.cmbCarga = new System.Windows.Forms.ComboBox();
@@ -254,6 +256,8 @@
             // grpCon
             // 
             this.grpCon.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.grpCon.Controls.Add(this.lblYear);
+            this.grpCon.Controls.Add(this.cmbYear);
             this.grpCon.Controls.Add(this.lblTotal);
             this.grpCon.Controls.Add(this.lblcarga);
             this.grpCon.Controls.Add(this.cmbCarga);
@@ -269,6 +273,30 @@
             this.grpCon.TabIndex = 1;
             this.grpCon.TabStop = false;
             this.grpCon.Text = "CONSULTAS";
+            // 
+            // lblYear
+            // 
+            this.lblYear.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblYear.AutoSize = true;
+            this.lblYear.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblYear.Location = new System.Drawing.Point(28, 168);
+            this.lblYear.Name = "lblYear";
+            this.lblYear.Size = new System.Drawing.Size(54, 22);
+            this.lblYear.TabIndex = 7;
+            this.lblYear.Text = "AÑO:";
+            // 
+            // cmbYear
+            // 
+            this.cmbYear.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.cmbYear.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbYear.FormattingEnabled = true;
+            this.cmbYear.Location = new System.Drawing.Point(156, 168);
+            this.cmbYear.Name = "cmbYear";
+            this.cmbYear.Size = new System.Drawing.Size(90, 30);
+            this.cmbYear.TabIndex = 6;
+            this.cmbYear.SelectedIndexChanged += new System.EventHandler(this.cmbYear_SelectedIndexChanged);
             // 
             // lblTotal
             // 
@@ -349,7 +377,7 @@
             this.datagridalerta.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.datagridalerta.EnableHeadersVisualStyles = false;
             this.datagridalerta.GridColor = System.Drawing.Color.SteelBlue;
-            this.datagridalerta.Location = new System.Drawing.Point(16, 202);
+            this.datagridalerta.Location = new System.Drawing.Point(16, 213);
             this.datagridalerta.Name = "datagridalerta";
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
@@ -421,5 +449,7 @@
         private System.Windows.Forms.Label lblTotal;
         private System.Windows.Forms.Label lblInforma3;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblYear;
+        private System.Windows.Forms.ComboBox cmbYear;
     }
 }

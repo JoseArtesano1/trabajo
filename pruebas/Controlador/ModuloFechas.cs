@@ -151,7 +151,43 @@ namespace pruebas.Controlador
             return dt;
         }
 
-       public DataTable CargaGridAlerta()
+        public DataTable CargaGridDias1(string anno)
+        {
+            var dt = new DataTable();
+            dt.Columns.Add("Nombre");
+            dt.Columns.Add("Tipo");
+            dt.Columns.Add("Inicio");
+            dt.Columns.Add("Fin");
+            dt.Columns.Add("Naturales");
+            dt.Columns.Add("Laborales");
+
+            DataRow row = dt.NewRow();
+            using (var contexto = new MyDbContext())
+            {
+                var dias = (from tr in contexto.Trabajadors
+                            join p in contexto.Periodos
+                            on tr.IdTrabajador equals p.IdTrabajador
+                            join t in contexto.TipoDias
+                            on p.IdTipoDia equals t.IdTipoDia
+                            where  p.FechaInicio.Substring(6,4) == anno orderby tr.Nombre
+                            select new
+                            {   Nombr=tr.Nombre,
+                                FechaIn = p.FechaInicio,
+                                FechaFinal = p.FechaFin,
+                                Tipo = t.Denominacion,
+                            }).ToArray();
+               
+                foreach (var item in dias)
+                {
+                    dt.Rows.Add(item.Nombr.ToString(),item.Tipo.ToString(), item.FechaIn, item.FechaFinal, TotaldiasNaturales(item.FechaFinal, item.FechaIn).ToString(), TotaldiasLaborales(item.FechaFinal, item.FechaIn, item.Tipo).ToString());
+                }
+            }
+            return dt;
+        }
+
+
+
+        public DataTable CargaGridAlerta()
         {
             var dt = new DataTable();
             dt.Columns.Add("Nombre");

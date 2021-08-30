@@ -60,7 +60,7 @@ namespace pruebas.Vista
 
             if (cmbTrabajador.SelectedIndex == -1) { MessageBox.Show("Selecciona trabajador"); cmbTrabajador.Focus(); return; }
             if (cmbTipodia.SelectedIndex == -1) { MessageBox.Show("Selecciona tipo"); cmbTipodia.Focus(); return; }
-           
+            if (moduloTexto.isFileOpen(moduloTexto.ruta)) { MessageBox.Show("cierre el documento"); return; }
 
             int idtp = moduloInicio.ObtenerId("select IdTipoDia from pyme.tipodias where Denominacion='" + cmbTipodia.SelectedValue.ToString() + "';");
             idTrab = moduloInicio.ObtenerId("select IdTrabajador from pyme.trabajadors where Nombre='" + cmbTrabajador.SelectedValue.ToString() + "';");
