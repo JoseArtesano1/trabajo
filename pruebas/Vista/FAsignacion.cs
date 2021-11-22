@@ -52,7 +52,7 @@ namespace pruebas.Vista
 
         public void CargaCombos()
         {
-            cmbTrabajador.DataSource = moduloInicio.CargaGridyCombo("select Nombre from pyme.trabajadors");
+            cmbTrabajador.DataSource = moduloInicio.CargaGridyCombo("select Nombre from pyme.trabajadors where Activo=true");
             cmbTrabajador.ValueMember = "Nombre";
             cmbTrabajador.SelectedIndex = -1;
             string[] asignaciones = new string[] { "CURSOS", "EPIS", "HORAS" };
@@ -130,7 +130,7 @@ namespace pruebas.Vista
         {
             if (txtHoras.Text != "")
             {
-                if (!moduloInicio.IsNumeric(txtHoras.Text) ||(!moduloInicio.isnumericDouble(txtHoras.Text)))
+                if (!moduloInicio.isnumericDouble(txtHoras.Text))
                 { MessageBox.Show("Introduce horas");e.Cancel = true; }
             }
         }

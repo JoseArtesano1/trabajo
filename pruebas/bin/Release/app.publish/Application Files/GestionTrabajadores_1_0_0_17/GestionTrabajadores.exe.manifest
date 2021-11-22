@@ -1,0 +1,312 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2">
+  <asmv1:assemblyIdentity name="GestionTrabajadores.exe" version="1.0.0.17" publicKeyToken="2e64440c9c1b6b91" language="neutral" processorArchitecture="msil" type="win32" />
+  <description asmv2:iconFile="rompecabezas.ico" xmlns="urn:schemas-microsoft-com:asm.v1" />
+  <application />
+  <entryPoint>
+    <assemblyIdentity name="GestionTrabajadores" version="1.0.0.3" language="neutral" processorArchitecture="msil" />
+    <commandLine file="GestionTrabajadores.exe" parameters="" />
+  </entryPoint>
+  <trustInfo>
+    <security>
+      <applicationRequestMinimum>
+        <PermissionSet Unrestricted="true" ID="Custom" SameSite="site" />
+        <defaultAssemblyRequest permissionSetReference="Custom" />
+      </applicationRequestMinimum>
+      <requestedPrivileges xmlns="urn:schemas-microsoft-com:asm.v3">
+        <!--
+          Opciones del manifiesto de Control de cuentas de usuario
+          Si quiere cambiar el nivel de Control de cuentas de usuario de Windows, reemplace el
+          nodo requestedExecutionLevel por alguno de los siguientes.
+
+        <requestedExecutionLevel  level="asInvoker" uiAccess="false" />
+        <requestedExecutionLevel  level="requireAdministrator" uiAccess="false" />
+        <requestedExecutionLevel  level="highestAvailable" uiAccess="false" />
+
+         Si desea usar la virtualización de archivos y del Registro para la
+         compatibilidad con versiones anteriores, elimine el nodo requestedExecutionLevel.
+    -->
+        <requestedExecutionLevel level="asInvoker" uiAccess="false" />
+      </requestedPrivileges>
+    </security>
+  </trustInfo>
+  <dependency>
+    <dependentOS>
+      <osVersionInfo>
+        <os majorVersion="5" minorVersion="1" buildNumber="2600" servicePackMajor="0" />
+      </osVersionInfo>
+    </dependentOS>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
+      <assemblyIdentity name="Microsoft.Windows.CommonLanguageRuntime" version="4.0.30319.0" />
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="BouncyCastle.Crypto.dll" size="2453504">
+      <assemblyIdentity name="BouncyCastle.Crypto" version="1.8.3.0" publicKeyToken="0E99375E54769942" language="neutral" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>SikSNsUBe/37MPrUw9tNBhTDYsS1NAnGELEtSD17JuY=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="EntityFramework.dll" size="5225168">
+      <assemblyIdentity name="EntityFramework" version="6.0.0.0" publicKeyToken="B77A5C561934E089" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>nCD7KthqdgsMauvZMByQCYkdAq4UcgqTkmwLU1uK0Js=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="EntityFramework.SqlServer.dll" size="622288">
+      <assemblyIdentity name="EntityFramework.SqlServer" version="6.0.0.0" publicKeyToken="B77A5C561934E089" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>4OEmw7inupUB0D+Z1Upcu9F0vOy2FwCYq0zBIZ8n+TM=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="GestionTrabajadores.exe" size="792512">
+      <assemblyIdentity name="GestionTrabajadores" version="1.0.0.3" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>vSlyYp4un5r5vsomBlEHzrhy3FV2iCA27Ph+BVeIQ7w=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Google.Protobuf.dll" size="298496">
+      <assemblyIdentity name="Google.Protobuf" version="3.6.1.0" publicKeyToken="A7D26565BAC4D604" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>tmCHIa/sZfxfbRML4V98ONw3aJn73tQolsd5EaiejRM=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="MySql.Data.dll" size="770048">
+      <assemblyIdentity name="MySql.Data" version="8.0.18.0" publicKeyToken="C5687FC88969C44D" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>p2W1N/jvKtfTtkCJwl7oqYenqusuYafmei73Wtm/3lg=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="MySql.Data.EntityFramework.dll" size="393728">
+      <assemblyIdentity name="MySql.Data.EntityFramework" version="8.0.18.0" publicKeyToken="C5687FC88969C44D" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>j3HeW8sNW3u3s78fS0HNOZnPXxOgZ7crSmaxjAh53So=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Renci.SshNet.dll" size="422912">
+      <assemblyIdentity name="Renci.SshNet" version="2016.1.0.0" publicKeyToken="1CEE9F8BDE3DB106" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+        <dsig:DigestValue>9jFe0UZDj3cCAzaBBD+P6WkO05oqvJoZIkZCSUSjono=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <file name="Gestion.ico" size="67646">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>L52Vp24EzLmf1lx8u7RAS35hQuueOp5eP1NXbV52Ed0=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="GestionTrabajadores.exe.config" size="1467">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>HT6hPjA+OyMiXEvtfnXxyzGurYjSIIMvfdO8hfQ14dM=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Recursos\agenda1.png" size="1853">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>4GTUeNemsCvLaUeJOH/HVzX3mwMVygk17ETvJ4D5eFg=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Recursos\calendario1.png" size="1322">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>GCnZmYg6be5ZGqYCgETBYNUMAPI3x+tHo8y0mTTrzNQ=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Recursos\cancelar.ico" size="103398">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>lJXu4r1fJHsAqMX8UVTOFPn2cvdpXuLYdYfv03gXs0o=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Recursos\casilla-de-verificacion.png" size="2964">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>Dm2MBhr9kGl7r5soBAU5b2b2X1giTk84M6zQJiL90Eg=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Recursos\cita1.png" size="3259">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>nmjydVANYUhH4vSG8kJZKG4HS3+6JEXq+SIKA41bMoY=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Recursos\cuadricula.ico" size="100934">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>UY5BCsV+slgTRVUQiN5PPhSW2pojS1eZnlJO3slLCcs=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Recursos\cuadro.png" size="4570">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>MuMW2ObFIYCmi9vXN1UJEREKXbul0th1Htd7ZpPgjRM=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Recursos\educacion1.png" size="2670">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>Jobfamuk0V1fe5QUwYs/weZfNOko+J9BZQ0AnOJtRkk=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Recursos\linea.png" size="6242">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>mN0HtjA+DTLd7XmSPHnPKeU1fFqOXuTE1PsBvkrji70=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Recursos\papelera1.png" size="4868">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>3B3NBizBuMzMTFdo3I2DvLm1WXoBHc4tWYe6eUUgJEA=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Recursos\pregunta1.png" size="2862">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>RKL0i1m+K52D+S4SysJA8Re+UoTMIBzNg53S52wVNk4=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Recursos\tarea1.png" size="1284">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>cAr2m02pOnfIES71pFtOEAd0pvIzhMCiMRVwIUF0aSk=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Recursos\trabajadores1 .png" size="1968">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>/Ts+V3gCTnRsBUTBMwYVeRwdbJ5nz21f8BuRyrRL/nA=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Recursos\trabajo.png" size="365103">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>eBNyMIFob0uIICKW3LDnYS5agO4SaYflSTH2RHti7R4=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Recursos\usuario1.png" size="2044">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>Bc/tuRHiNGL/zMae1NHRBrQoMZjFZvoHy1fobAyKU1U=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="rgraficos.txt" size="1763">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>yQlT9/TUH8BGCzJrPeA4jiGlIeuofG0JH38uFvPWpG4=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="rompecabezas.ico" size="118662">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>mgGqS1V685Kbpo4tgSMq4P0Y+ord8r8MZDii86gHjtE=</dsig:DigestValue>
+    </hash>
+  </file>
+<publisherIdentity name="CN=MSI\Jose Antonio" issuerKeyHash="86ae7e439b23879e89d1c1a15feb9f2231be6f35" /><Signature Id="StrongNameSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" /><DigestValue>T5MDoX64S4PnMVEut9zrj/oXtIHLdYIQJzXn6cT/a6Y=</DigestValue></Reference></SignedInfo><SignatureValue>X0aKfr4uQwH9CdAelKHnHrwhnurS0SzKrRkqVqIBX4IqpVQjbK5Cxq19eXsYnyddzloyGDeH22PK2r7xT0bcF603L/X6yTfYi56DH3jFWG1V52JL9HRFF8/FMl2AzSaISwDrrxtDO6fRtOXJl61v5sbtVtA8tU1Hhn3BFYftNSw=</SignatureValue><KeyInfo Id="StrongNameKeyInfo"><KeyValue><RSAKeyValue><Modulus>y5NusIGxjd1krzZdbi9Rxcq9I/BEiZl/bkymCdqkccgQS3a34uR+fe6YV9hFwSMNm7+YMS83RcZvzJpmfV9YNBE0/SmZA6XbdpYPWKsv5466xZjbehTcivElF1WefU05a4IlajBQq0oejlcVX0eeRGibG020aFt5oXmvEHhc0l0=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><msrel:RelData xmlns:msrel="http://schemas.microsoft.com/windows/rel/2005/reldata"><r:license xmlns:r="urn:mpeg:mpeg21:2003:01-REL-R-NS" xmlns:as="http://schemas.microsoft.com/windows/pki/2005/Authenticode"><r:grant><as:ManifestInformation Hash="a66bffc4e9e73527108275cb81b417fa8febdcb72e5131e7834bb87ea103934f" Description="" Url=""><as:assemblyIdentity name="GestionTrabajadores.exe" version="1.0.0.17" publicKeyToken="2e64440c9c1b6b91" language="neutral" processorArchitecture="msil" type="win32" /></as:ManifestInformation><as:SignedBy /><as:AuthenticodePublisher><as:X509SubjectName>CN=MSI\Jose Antonio</as:X509SubjectName></as:AuthenticodePublisher></r:grant><r:issuer><Signature Id="AuthenticodeSignature" xmlns="http://www.w3.org/2000/09/xmldsig#"><SignedInfo><CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /><SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha256" /><Reference URI=""><Transforms><Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" /><Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" /></Transforms><DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" /><DigestValue>NEr3uPcN2vheOPIMb7lHF0uKWA0wjEa43fUB3vH/iqo=</DigestValue></Reference></SignedInfo><SignatureValue>W6BPlPrj++Ek/yHVCNZNNoG8D+ASQ80l6M3lJ4IgQQW5mvviC2tjDsD8LeBV7+uOnCrhFBArXfW18T3ScRwqL+linuk3DxoY19tvdpGuicjYPPBlrOo4/J9KgAVK93EBEQe35VtiOGCbC1t/y9VmeTi2QzVbnL6danBhsw/TiE8=</SignatureValue><KeyInfo><KeyValue><RSAKeyValue><Modulus>y5NusIGxjd1krzZdbi9Rxcq9I/BEiZl/bkymCdqkccgQS3a34uR+fe6YV9hFwSMNm7+YMS83RcZvzJpmfV9YNBE0/SmZA6XbdpYPWKsv5466xZjbehTcivElF1WefU05a4IlajBQq0oejlcVX0eeRGibG020aFt5oXmvEHhc0l0=</Modulus><Exponent>AQAB</Exponent></RSAKeyValue></KeyValue><X509Data><X509Certificate>MIIB2TCCAUKgAwIBAgIQNxgiSja1WaJEXCGXlCnWCTANBgkqhkiG9w0BAQsFADArMSkwJwYDVQQDHiAATQBTAEkAXABKAG8AcwBlACAAQQBuAHQAbwBuAGkAbzAeFw0yMTAyMDkyMzI0MzRaFw0yMjAyMTAwNTI0MzRaMCsxKTAnBgNVBAMeIABNAFMASQBcAEoAbwBzAGUAIABBAG4AdABvAG4AaQBvMIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDLk26wgbGN3WSvNl1uL1HFyr0j8ESJmX9uTKYJ2qRxyBBLdrfi5H597phX2EXBIw2bv5gxLzdFxm/MmmZ9X1g0ETT9KZkDpdt2lg9Yqy/njrrFmNt6FNyK8SUXVZ59TTlrgiVqMFCrSh6OVxVfR55EaJsbTbRoW3mhea8QeFzSXQIDAQABMA0GCSqGSIb3DQEBCwUAA4GBABq8p3ZSBOCZUA031QIMO02hHsvZ7KGdsKYjhLE3zrMsZd3XcRJ+N1m9WqD0/bNIw0zAmt85W1GNowRYH7gE81TFwcfY1OTwRKkwwIIUXIdXUbs7nf+DoJrv1uq80ggT7rARppXBSzgRzdkTwaX/BvjTYEqF5LE/QbVy1mF7yywK</X509Certificate></X509Data></KeyInfo></Signature></r:issuer></r:license></msrel:RelData></KeyInfo></Signature></asmv1:assembly>

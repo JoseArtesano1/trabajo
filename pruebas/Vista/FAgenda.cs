@@ -112,8 +112,8 @@ namespace pruebas.Vista
                 if (datagridAgenda.CurrentRow.Cells[0].Value.ToString() != "")
                 {
                     idA = int.Parse( datagridAgenda.CurrentRow.Cells[0].Value.ToString());
-                    txtAsunto.Text = datagridAgenda.CurrentRow.Cells[3].Value.ToString();
-                   datetimefecha.Value =DateTime.Parse( datagridAgenda.CurrentRow.Cells[2].Value.ToString());
+                    txtAsunto.Text = datagridAgenda.CurrentRow.Cells[2].Value.ToString();
+                   datetimefecha.Value =DateTime.Parse( datagridAgenda.CurrentRow.Cells[1].Value.ToString());
 
                 }
                 else {MessageBox.Show("selecciona uno o debe dar de alta Asunto");}
@@ -151,7 +151,7 @@ namespace pruebas.Vista
             if ( txtAsunto.Text != "")
             {
                 if (MessageBox.Show("Este proceso borra el asunto " +
-                      datagridAgenda.CurrentRow.Cells[3].Value.ToString().ToUpper() +
+                      datagridAgenda.CurrentRow.Cells[2].Value.ToString().ToUpper() +
                       " de la bd, lo quieres hacer S/N", "CUIDADO", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
                     using (var contexto = new MyDbContext())

@@ -35,7 +35,7 @@ namespace pruebas.Vista
 
         private void CargaCombos()
         {
-            cmbTrabajador.DataSource = moduloInicio.CargaGridyCombo("select Nombre from pyme.trabajadors");
+            cmbTrabajador.DataSource = moduloInicio.CargaGridyCombo("select Nombre from pyme.trabajadors where Activo=true");
             cmbTrabajador.ValueMember = "Nombre";
             cmbTipodia.DataSource = moduloInicio.CargaGridyCombo("select Denominacion from pyme.tipodias");
             cmbTipodia.ValueMember = "Denominacion";

@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2">
-  <asmv1:assemblyIdentity name="GestionTrabajadores.exe" version="1.0.0.14" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
+  <asmv1:assemblyIdentity name="GestionTrabajadores.exe" version="1.0.0.17" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
   <description asmv2:iconFile="rompecabezas.ico" xmlns="urn:schemas-microsoft-com:asm.v1" />
   <application />
   <entryPoint>
@@ -86,7 +86,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>zoe2VHdMQRLJQlQaYlJ+fh82ZYMlvsqc8JC+Sx7OvY8=</dsig:DigestValue>
+        <dsig:DigestValue>vSlyYp4un5r5vsomBlEHzrhy3FV2iCA27Ph+BVeIQ7w=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -147,13 +147,13 @@
       <dsig:DigestValue>L52Vp24EzLmf1lx8u7RAS35hQuueOp5eP1NXbV52Ed0=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="GestionTrabajadores.exe.config" size="1469">
+  <file name="GestionTrabajadores.exe.config" size="1467">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>BmjI41FKAfAE0iU5LI92QoPpi2N5lg0BJLMV5FnGLgA=</dsig:DigestValue>
+      <dsig:DigestValue>HT6hPjA+OyMiXEvtfnXxyzGurYjSIIMvfdO8hfQ14dM=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Recursos\agenda1.png" size="1853">
