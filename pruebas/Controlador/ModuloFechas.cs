@@ -16,7 +16,7 @@ namespace pruebas.Controlador
     {   
         ModuloInicio moduloInicio = new ModuloInicio();
 
-        string conexion = "server=localhost;User Id=root; Persist Security Info=True;database=Pyme;password=root";
+        string conexion = "server=192.168.1.2;User Id=root; Persist Security Info=True;database=Pyme;password=root";
         public List<Trabajador> milistadotrabajador = new List<Trabajador>();
         public List<string> elementos = new List<string>();
         public string[] misfechas;
@@ -121,7 +121,9 @@ namespace pruebas.Controlador
 
         }
 
-        public DataTable CargaGridDias(int idTrab)
+   
+
+        public DataTable CargaGridDias2(int idTrab, string year, bool opcion)
         {
             var dt = new DataTable();
             dt.Columns.Add("Tipo");
@@ -133,23 +135,39 @@ namespace pruebas.Controlador
             DataRow row = dt.NewRow();
             using (var contexto = new MyDbContext())
             {
-                var dias = (from p in contexto.Periodos
+                var dias = (dynamic)null; 
+                if (opcion)
+                {      dias = (from p in contexto.Periodos
                             join t in contexto.TipoDias
                             on p.IdTipoDia equals t.IdTipoDia
-                            where p.IdTrabajador == idTrab
+                            where p.IdTrabajador == idTrab && p.FechaInicio.Substring(6, 4) == year
                             select new
                             {   FechaIn = p.FechaInicio,
                                 FechaFinal = p.FechaFin,
                                 Tipo = t.Denominacion,
                             }).ToArray();
-
+                }
+                else
+                {
+                     dias = (from p in contexto.Periodos
+                                join t in contexto.TipoDias
+                                on p.IdTipoDia equals t.IdTipoDia
+                                where p.IdTrabajador == idTrab 
+                                select new
+                                {   FechaIn = p.FechaInicio,
+                                    FechaFinal = p.FechaFin,
+                                    Tipo = t.Denominacion,
+                                }).ToArray();
+                }
+ 
                 foreach (var item in dias)
-                {                    
+                {
                     dt.Rows.Add(item.Tipo.ToString(), item.FechaIn, item.FechaFinal, TotaldiasNaturales(item.FechaFinal, item.FechaIn).ToString(), TotaldiasLaborales(item.FechaFinal, item.FechaIn, item.Tipo).ToString());
                 }
             }
             return dt;
         }
+
 
         public DataTable CargaGridDias1(string anno)
         {
@@ -215,8 +233,7 @@ namespace pruebas.Controlador
         }
 
         public int CalculosFechas(string fechaSinCalculo, int ndias)
-        {
-           
+        {           
             if (fechaSinCalculo != "")
             {
               DateTime fcambiada= ObtenerFechaDate(fechaSinCalculo);
@@ -231,7 +248,6 @@ namespace pruebas.Controlador
                 return dias.Days;
             }
            
-           
         }
 
         public DateTime CheckfechaModifAlta(MyDbContext contexto, int IdTrabr, DateTime fechaAlta)
@@ -245,7 +261,7 @@ namespace pruebas.Controlador
             {
                 while ((!existe) && (a < fechasAlta.Count))
                 {
-                    if (DateTime.Compare(DateTime.Parse(fechasAlta[a].FechaInicio), fechaAlta) > 0
+                    if (DateTime.Compare(DateTime.Parse(fechasAlta[a].FechaInicio), fechaAlta) > 0    //controlar los periodos
                         || DateTime.Compare(DateTime.Parse(fechasAlta[a].FechaInicio), fechaAlta) == 0)
                     {
                         if (CheckFechaEpi(contexto, IdTrabr, fechaAlta))
@@ -347,6 +363,17 @@ namespace pruebas.Controlador
             else
             {return PeriodoFechas = "DEL DIA " + uno.ToString("dd/MM/yyyy")
                     + "AL DIA " + dos.ToString("dd/MM/yyyy"); }
+        }
+
+        public bool RenovarAlta(DateTime uno, MyDbContext contexto, int IdTrabajado)
+        {
+            var fechaExistente = contexto.Trabajadors.Where(x => x.IdTrabajador == IdTrabajado).FirstOrDefault().FechaAlta;
+            DateTime fechaCorrecta = ObtenerFechaDate(fechaExistente);
+            if (DateTime.Compare(uno, fechaCorrecta) != 0)
+            {
+                return true;
+            }
+            return false;
         }
 
         //public DateTime Bisiesto(string fecha)  //devuelve fecha sumando 365 o 366 si es bisiesto

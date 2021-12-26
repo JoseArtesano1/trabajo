@@ -126,7 +126,7 @@ namespace pruebas.Vista
 
         private void ActualizarGrid( int idt)
         {
-            datagridDias.DataSource = moduloFechas.CargaGridDias(idt);
+            datagridDias.DataSource = moduloFechas.CargaGridDias2(idt,"",false);
         }
 
         

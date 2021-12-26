@@ -17,6 +17,7 @@ namespace pruebas.Controlador
        public string rutah = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "\\horas.docx";
        public string ruta = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) +"\\Vacaciones.docx";
        public  string rutaAB = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "\\ALTA_BAJA.docx";
+
         public void AbrirLeer()
         {
             var fileContent = string.Empty;
@@ -43,7 +44,7 @@ namespace pruebas.Controlador
                         do
                         {                           
                             fileContent = reader.ReadLine();
-                            if (fileContent != ""){vale=  ComprobarLinea(fileContent); }
+                            if (fileContent != "" && fileContent!=null){vale=  ComprobarLinea(fileContent); } else { vale = false; }
                             
                         } while (fileContent!= ""&& vale);   //continua leyendo mientras tenga contenido y dias validos
              
@@ -78,8 +79,8 @@ namespace pruebas.Controlador
                     {
                       Festivo NuevoFestivo = new Festivo();
                       NuevoFestivo.FechaFestivo=dia;
-                        Context.Festivos.Add(NuevoFestivo);
-                        Context.SaveChanges();
+                       Context.Festivos.Add(NuevoFestivo);
+                       Context.SaveChanges();
                     }
                 }
                 correcto = true;

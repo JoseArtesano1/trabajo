@@ -33,11 +33,19 @@ namespace pruebas.Vista
             idcont = moduloInicio.ObtenerIdControl(Constants.Id_usuario).Last().IdControl;
             datePickpermiso.Visible = false;
             lblPC.Visible = false;
+            LimpiarAnual(false, false,false);
         }
 
         private void btnCerrar_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void LimpiarAnual(bool cmb, bool lbl, bool cantidad)
+        {  
+            cmbAnual.Visible = cmb;
+            lblyear.Visible = lbl; lblTotal.Visible = cantidad; lblLab.Visible=cantidad;
+           
         }
 
         private void VaciarDatagridAsignar()
@@ -93,7 +101,7 @@ namespace pruebas.Vista
                     MessageBox.Show("selecciona uno o debe dar de alta Trabajador"); btnAlta.Enabled = true;
                     VaciarDatagridAsignar(); cmbAsignado.Enabled = false;
                 }
-                
+                LimpiarAnual(false, false,false);
             }
           
         }
@@ -254,6 +262,9 @@ namespace pruebas.Vista
                         Trabajador trabajador = moduloInicio.TrabajadoresEmpresa().Where(x => x.IdTrabajador == idTrabajador).FirstOrDefault(); 
                         if (!act)
                         {moduloTexto.GenerarWordAlta_Baja(trabajador, cmbCategoria.SelectedValue.ToString(), act); }
+                        else { if (moduloFechas.RenovarAlta(fechaAlta, contexto, idTrabajador)) {
+                                moduloTexto.GenerarWordAlta_Baja(trabajador, cmbCategoria.SelectedValue.ToString(), act);}
+                             }
      
                     }
                    
@@ -265,8 +276,7 @@ namespace pruebas.Vista
         }
 
         public void ControlDatos()
-        {
-           
+        {           
             if (txtnombre.Text == "") { MessageBox.Show("Introduce nombre"); txtnombre.Focus(); return; }
             if (txtdni.Text == "") { MessageBox.Show("Introduce dni/nie"); txtdni.Focus(); return; }
             if (txtdireccion.Text == "") { MessageBox.Show("Introduce dirección"); txtdireccion.Focus(); return; }
@@ -287,17 +297,21 @@ namespace pruebas.Vista
                         datagridAsignados.DataSource = moduloInicio.CargaGridyCombo("select e.Nombre, t.FechaEpi " +
                               "from pyme.epis e, pyme.trabajadorepis t where e.IdEpi = t.IdEpi and " +
                               "t.IdTrabajador =" + idTrabajador + ";");
+                        LimpiarAnual(false, false,false);
                         break;
                     case 1:
                        datagridAsignados.DataSource= moduloInicio.CargaGridyCombo("select Nombre, Duracion from pyme.cursoes, pyme.trabajadorcursoes where IdCurso=Curso_IdCurso and Trabajador_IdTrabajador=" + idTrabajador+";");
-                         break;
+                        LimpiarAnual(false, false,false);
+                        break;
                     case 2:
-                        datagridAsignados.DataSource = moduloFechas.CargaGridDias(idTrabajador);
+                          datagridAsignados.DataSource = moduloFechas.CargaGridDias2(idTrabajador,"",false);
+                          cmbAnual.DataSource = moduloInicio.years; LimpiarAnual(true, true,false); cmbAnual.SelectedIndex = -1;
                         break;
                     case 3:
                          datagridAsignados.DataSource= moduloInicio.CargaGridyCombo("select e.horas, (e.horas*t.Valor) as Importe" +
                             " from pyme.trabajadors t,  pyme.extras e " +
                             "where t.IdTrabajador = e.IdTrabajador and t.IdTrabajador=" + idTrabajador + ";");
+                        LimpiarAnual(false, false,false);
                         break;
                 }
             }
@@ -365,6 +379,26 @@ namespace pruebas.Vista
             {
                 datePickpermiso.Visible = false;
                 lblPC.Visible = false;
+            }
+        }
+
+        private void cmbAnual_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            datagridAsignados.DataSource = "";
+            if (cmbAnual.SelectedIndex != -1)
+            {
+                LimpiarAnual(true, true, true);
+                datagridAsignados.DataSource = moduloFechas.CargaGridDias2(idTrabajador,cmbAnual.SelectedValue.ToString(),true);
+                var tabla1 = moduloFechas.CargaGridDias2(idTrabajador, cmbAnual.SelectedValue.ToString(), true);
+                var x = tabla1.AsEnumerable().Select(r => Convert.ToInt32(r.Field<string>("Naturales"))).Sum();
+                var y= tabla1.AsEnumerable().Select(r => Convert.ToInt32(r.Field<string>("Laborales"))).Sum();
+                lblTotal.Text=" DIAS NATURALES: " + x.ToString();
+                lblLab.Text =" DIAS LABORALES: " + y.ToString();
+            }
+            else
+            {
+                MessageBox.Show("Puedes seleccionar un año");
+                datagridAsignados.DataSource = moduloFechas.CargaGridDias2(idTrabajador, "", false);
             }
         }
     }

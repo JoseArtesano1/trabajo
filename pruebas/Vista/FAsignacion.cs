@@ -73,10 +73,6 @@ namespace pruebas.Vista
 
         }
 
-        private void CmbTrabajador_SelectedValueChanged(object sender, EventArgs e)
-        {
-            throw new NotImplementedException();
-        }
 
         private void CargaGridAsignacion(string sql)
         {
@@ -249,7 +245,7 @@ namespace pruebas.Vista
                                     contexto.Extras.Remove(extra);
                                     contexto.SaveChanges();
                                 }
-                                CargaGridAsignacion("select e.IdExtra, e.horas as Horas, (e.horas*t.Valor) as Total from pyme.trabajadors t, empresa.extras e where t.IdTrabajador= e.IdTrabajador and t.IdTrabajador=" + idtrabajador + ";");
+                                CargaGridAsignacion("select e.IdExtra, e.horas as Horas, (e.horas*t.Valor) as Total from pyme.trabajadors t, pyme.extras e where t.IdTrabajador= e.IdTrabajador and t.IdTrabajador=" + idtrabajador + ";");
                             }
                             id1 = 0; dato = null;
                         }
