@@ -111,8 +111,9 @@ namespace pruebas.Vista
                             break;
 
                         case 2:
-                            CargaGridAsignacion("select e.IdExtra, e.horas as Horas, (e.horas*t.Valor) as Total from pyme.trabajadors t, pyme.extras e where t.IdTrabajador= e.IdTrabajador and t.IdTrabajador=" + idtrabajador + ";");
-                            GestionControles(false, true, false, false, false, true, false, true, false,true,true);
+                            CargaGridAsignacion("select e.IdExtra, t.IdTrabajador, e.horas as Horas, (e.horas*t.Valor) as Total from pyme.trabajadors t, pyme.extras e where t.IdTrabajador= e.IdTrabajador and t.IdTrabajador=" + idtrabajador + ";");
+                        datagridAsignar.Columns[1].Visible = false;
+                        GestionControles(false, true, false, false, false, true, false, true, false,true,true);
                             lblValor.Text = "HORAS";
                         cmbmes.SelectedIndex = -1;
                         break;
@@ -186,7 +187,8 @@ namespace pruebas.Vista
             }
             moduloTexto.GenerarWordHoras(cmbTrabajador.SelectedValue.ToString(), cmbmes.SelectedItem.ToString(),double.Parse(txtHoras.Text));
             ActualizarControles(); moduloInicio.LimpiarTexto(this);
-            CargaGridAsignacion("select e.IdExtra, e.horas as Horas, (e.horas*t.Valor) as Total from pyme.trabajadors t, pyme.extras e where t.IdTrabajador= e.IdTrabajador and t.IdTrabajador=" + idtrabajador + ";");
+            CargaGridAsignacion("select e.IdExtra,t.IdTrabajador, e.horas as Horas, (e.horas*t.Valor) as Total from pyme.trabajadors t, pyme.extras e where t.IdTrabajador= e.IdTrabajador and t.IdTrabajador=" + idtrabajador + ";");
+            datagridAsignar.Columns[1].Visible = false;
         }
 
         private void btneliminar_Click(object sender, EventArgs e)
@@ -196,10 +198,10 @@ namespace pruebas.Vista
                 switch (cmbasignacion.SelectedIndex)
                 {
                     case 0:
-                        if (id1 != 0||dato!=null)
+                        if (id1!= 0||dato!=null)
                         {
                             if (MessageBox.Show("Este proceso borra el curso asignado " +
-                        datagridAsignar.CurrentRow.Cells[2].Value.ToString().ToUpper() +
+                        dato.ToUpper() +
                         " de la bd, lo quieres hacer S/N", "CUIDADO", MessageBoxButtons.YesNo) == DialogResult.Yes)
                             {
                                 
@@ -216,7 +218,7 @@ namespace pruebas.Vista
                         if (id1 != 0 || dato != null)
                         {
                             if (MessageBox.Show("Este proceso borra el epi asignado " +
-                        datagridAsignar.CurrentRow.Cells[2].Value.ToString().ToUpper() +
+                        dato.ToUpper() +
                         " de la bd, lo quieres hacer S/N", "CUIDADO", MessageBoxButtons.YesNo) == DialogResult.Yes)
                             {
                                 using (var contexto = new MyDbContext())
@@ -234,7 +236,7 @@ namespace pruebas.Vista
                         break;
 
                     case 2:
-                        if (id1 != 0 || dato != null)
+                        if (id1 != 0) //|| double.Parse(dato) != 0)
                          {
                             if (MessageBox.Show("Este proceso borra la extra asignada " +
                                                " de la bd, lo quieres hacer S/N", "CUIDADO", MessageBoxButtons.YesNo) == DialogResult.Yes)
@@ -245,9 +247,10 @@ namespace pruebas.Vista
                                     contexto.Extras.Remove(extra);
                                     contexto.SaveChanges();
                                 }
-                                CargaGridAsignacion("select e.IdExtra, e.horas as Horas, (e.horas*t.Valor) as Total from pyme.trabajadors t, pyme.extras e where t.IdTrabajador= e.IdTrabajador and t.IdTrabajador=" + idtrabajador + ";");
+                                CargaGridAsignacion("select e.IdExtra,t.IdTrabajador, e.horas as Horas, (e.horas*t.Valor) as Total from pyme.trabajadors t, pyme.extras e where t.IdTrabajador= e.IdTrabajador and t.IdTrabajador=" + idtrabajador + ";");
+                                datagridAsignar.Columns[1].Visible = false;
                             }
-                            id1 = 0; dato = null;
+                            id1 = 0;  dato = null;
                         }
                         else { MessageBox.Show("selecciona un período"); }
                         break;

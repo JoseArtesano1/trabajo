@@ -59,6 +59,7 @@ namespace pruebas.Vista
 
         private void MarcarMes()
         {
+           
             var listadoFechas = moduloInicio.ObtenerAgenda();
             var listadoIndividual = listadoFechas.Where(x => x.IdUsuario == Constants.Id_usuario).ToList();
             if (moduloInicio.ObtenerAutorizacion() == "A")
@@ -102,21 +103,30 @@ namespace pruebas.Vista
         private void monthcalenAgenda_DateSelected(object sender, DateRangeEventArgs e)
         {
             ActualizarGrid();
-           
+            moduloInicio.LimpiarTexto(this);
         }
 
         private void datagridAgenda_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex != -1)
-            {
+            {            
                 if (datagridAgenda.CurrentRow.Cells[0].Value.ToString() != "")
                 {
-                    idA = int.Parse( datagridAgenda.CurrentRow.Cells[0].Value.ToString());
-                    txtAsunto.Text = datagridAgenda.CurrentRow.Cells[2].Value.ToString();
-                   datetimefecha.Value =DateTime.Parse( datagridAgenda.CurrentRow.Cells[1].Value.ToString());
+                    idA = int.Parse(datagridAgenda.CurrentRow.Cells[0].Value.ToString());
+                    if (moduloInicio.ObtenerAutorizacion() == "A")
+                    {                      
+                       txtAsunto.Text = datagridAgenda.CurrentRow.Cells[3].Value.ToString(); 
+                       datetimefecha.Value =DateTime.Parse( datagridAgenda.CurrentRow.Cells[2].Value.ToString());
+                    }
+                    else
+                    {                        
+                        txtAsunto.Text = datagridAgenda.CurrentRow.Cells[2].Value.ToString(); 
+                        datetimefecha.Value = DateTime.Parse(datagridAgenda.CurrentRow.Cells[1].Value.ToString());
+                    }
+                   
 
                 }
-                else {MessageBox.Show("selecciona uno o debe dar de alta Asunto");}
+                else {MessageBox.Show("selecciona uno o debe dar de alta Asunto"); moduloInicio.LimpiarTexto(this); }
     
             }
             btnAlta.Enabled = false; 

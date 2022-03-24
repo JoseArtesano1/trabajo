@@ -16,7 +16,7 @@ namespace pruebas.Controlador
     {   
         ModuloInicio moduloInicio = new ModuloInicio();
 
-        string conexion = "server=192.168.1.2;User Id=root; Persist Security Info=True;database=Pyme;password=root";
+        string conexion = "server=localhost;User Id=root; Persist Security Info=True;database=Pyme;password=root";
         public List<Trabajador> milistadotrabajador = new List<Trabajador>();
         public List<string> elementos = new List<string>();
         public string[] misfechas;

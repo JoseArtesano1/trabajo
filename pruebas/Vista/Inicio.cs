@@ -19,7 +19,7 @@ namespace pruebas
         ModuloInicio moduloInicio = new ModuloInicio();
         public Form1()
         {
-            InitializeComponent();
+            InitializeComponent();   
             moduloInicio.InsertStartData();
             
         }

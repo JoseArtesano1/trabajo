@@ -225,8 +225,7 @@ namespace pruebas.Controlador
             
             if (System.IO.File.Exists(rutah))
             {
-              //  if (!isFileOpen(rutah)) { 
-                
+                              
                 object ObjMiss = System.Reflection.Missing.Value;
 
                 Trabajador trabajador = moduloInicio.TrabajadoresEmpresa().Where(x => x.Nombre == valor).FirstOrDefault();
@@ -288,7 +287,7 @@ namespace pruebas.Controlador
                 objDocumento.Bookmarks.Add("total", ref rango6);
                 objDocumento.Close();
                 objAplicacion.Quit();
-             //   }
+            
                 
             }
             else { MessageBox.Show("el archivo no existe"); }

@@ -16,7 +16,7 @@ namespace pruebas.Controlador
 {
     public class ModuloInicio
     {                                
-        string conexion = "server=192.168.1.2;User Id=root; Persist Security Info=True;database=Pyme;password=root";// cadena de conexión para trabajar con syntax smysql
+        string conexion = "server=localhost;User Id=root; Persist Security Info=True;database=Pyme;password=root";// cadena de conexión para trabajar con syntax smysql
               public  string[] consultas = new string[] { "CURSOS", "ALERTAS", "HORAS", "PERIODOS" };
               public  string[] consultas2 = new string[] { "CURSOS", "ALERTAS", "HORAS", "PERIODOS", "CONTROLES" };
               public string[] years = new string[] { "2021", "2022", "2023", "2024", "2025", "2026", "2027", "2028", "2029", "2030" };
@@ -205,6 +205,7 @@ namespace pruebas.Controlador
             return existen;
         }
 
+
         public string ControlContraseña(string pass, MyDbContext context, int idUsuario)
         {
             var usuarios = context.Usuarios.ToList();// listado de todos
@@ -239,6 +240,7 @@ namespace pruebas.Controlador
                 }
             }
         }
+
 
         public void ModificarTrabajador(string dni, string nombre, string direccion, string alta, string fdni,
             string fmed, int mov, long ss, int val, int idcat, bool act, string fperm, int idt)
@@ -283,6 +285,7 @@ namespace pruebas.Controlador
             }
         }
 
+
         public List<Modelo.Control> ObtenerIdControl(int idU)
         {
             List<Modelo.Control> ids = new List<Modelo.Control>();
@@ -293,6 +296,7 @@ namespace pruebas.Controlador
             }
             return ids;
         }
+
 
         public int ObtenerId(string sql)
         {    int id=0;
